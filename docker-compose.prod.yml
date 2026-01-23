@@ -1,0 +1,23 @@
+services:
+  website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: website-prod
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+      # Variáveis do Odoo (para integração futura)
+      - ODOO_URL=${ODOO_URL:-http://host.docker.internal:8069}
+      - ODOO_DATABASE=${ODOO_DATABASE:-odoo}
+      - ODOO_USERNAME=${ODOO_USERNAME:-admin}
+      - ODOO_PASSWORD=${ODOO_PASSWORD:-admin}
+    restart: unless-stopped
+    networks:
+      - website-network
+
+networks:
+  website-network:
+    driver: bridge
