@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const testimonials = [
@@ -48,7 +49,13 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div key={index} className="testimonial-card glass-card">
               <div className="testimonial-header">
-                <img src={testimonial.avatar} alt={testimonial.name} className="testimonial-avatar" />
+                <Image
+                  src={testimonial.avatar}
+                  alt={testimonial.name}
+                  width={56}
+                  height={56}
+                  className="testimonial-avatar"
+                />
                 <div className="testimonial-info">
                   <h4>{testimonial.name}</h4>
                   <span>{testimonial.role}</span>
