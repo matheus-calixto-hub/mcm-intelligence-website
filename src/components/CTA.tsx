@@ -56,7 +56,7 @@ export default function CTA() {
   const sectionRef = useScrollAnimation<HTMLElement>();
   const searchParams = useSearchParams();
   const [quoteType, setQuoteType] = useState<string | null>(null);
-  const [whatsappMessage, setWhatsappMessage] = useState(WHATSAPP_MESSAGES.demo);
+  const [whatsappMessage, setWhatsappMessage] = useState<string>(WHATSAPP_MESSAGES.demo);
   const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
