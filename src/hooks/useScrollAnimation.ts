@@ -1,35 +1,35 @@
 'use client';
 
-import { useEffect, useRef, RefObject } from 'react';
+import { useEffect, useRef } from 'react';
 
-export function useScrollAnimation<T extends HTMLElement = HTMLElement>(): RefObject<T> {
+export function useScrollAnimation<T extends HTMLElement>() {
   const ref = useRef<T>(null);
 
   useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
+    const node = ref.current;
+    if (!node) return;
 
-    element.classList.add('animate-on-scroll');
+    const targets = node.querySelectorAll('.reveal');
+    const elements = targets.length ? Array.from(targets) : [node];
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
           }
         });
       },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px',
-      }
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
     );
 
-    observer.observe(element);
+    elements.forEach((el) => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
 
-    return () => {
-      observer.unobserve(element);
-    };
+    return () => observer.disconnect();
   }, []);
 
   return ref;

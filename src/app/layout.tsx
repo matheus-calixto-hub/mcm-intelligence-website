@@ -1,12 +1,31 @@
 import type { Metadata } from "next";
+import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { COMPANY } from "@/config/constants";
 
-const inter = Inter({ subsets: ["latin"] });
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  display: "swap",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "MCM Consultoria - Agente Inteligente Integrado ao ERP Odoo",
-  description: "Especialistas em Odoo há mais de 8 anos. Agentes de IA integrados ao ERP, implantação, migração e customizações. Transforme seu Odoo com Inteligência Artificial.",
+  title: `${COMPANY.shortName} — Agentes de IA, integrações e Odoo`,
+  description:
+    "Consultoria hands-on em agentes de IA no WhatsApp, integrações críticas e Odoo. Soluções de negócio sem amarrar você a um único sistema.",
+  openGraph: {
+    title: `${COMPANY.shortName} — Agentes de IA e soluções de negócio`,
+    description:
+      "Agentes no WhatsApp, integrações e arquitetura Odoo. Portfolio e entregas reais.",
+    locale: "pt_BR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -16,11 +35,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </head>
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${fraunces.variable} ${manrope.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
