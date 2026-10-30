@@ -40,9 +40,6 @@ export default function Footer() {
                   {COMPANY.whatsappFormatted}
                 </a>
               </li>
-              <li>
-                <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
-              </li>
             </ul>
           </div>
         </div>

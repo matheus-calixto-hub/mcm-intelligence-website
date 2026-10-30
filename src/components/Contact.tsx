@@ -27,9 +27,6 @@ export default function Contact() {
               >
                 WhatsApp
               </a>
-              <a href={`mailto:${COMPANY.email}`} className="btn btn-ghost">
-                E-mail
-              </a>
             </div>
           </div>
 
@@ -44,12 +41,6 @@ export default function Contact() {
                 >
                   {COMPANY.whatsappFormatted}
                 </a>
-              </dd>
-            </div>
-            <div>
-              <dt>E-mail</dt>
-              <dd>
-                <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
               </dd>
             </div>
             <div>
