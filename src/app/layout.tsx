@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   keywords: [...SITE.keywords],
   authors: [{ name: "Matheus Muniz", url: siteUrl }],
   creator: "Matheus Muniz",
-  publisher: COMPANY.name,
+  publisher: COMPANY.legalName,
   category: "technology",
   classification: "Business / IT Consulting",
   referrer: "origin-when-cross-origin",

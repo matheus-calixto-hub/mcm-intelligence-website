@@ -3,7 +3,8 @@
  */
 
 export const COMPANY = {
-  name: 'MCM Consultoria em TI LTDA',
+  name: 'MCM Consultoria em TI',
+  legalName: 'MCM Consultoria em TI LTDA',
   shortName: 'MCM',
   brand: 'MCM',
   tagline: 'Consultoria em TI',

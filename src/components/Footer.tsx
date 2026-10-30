@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {currentYear} {COMPANY.name}</p>
+          <p>&copy; {currentYear} {COMPANY.legalName}</p>
           <p>{COMPANY.location}</p>
         </div>
       </div>
