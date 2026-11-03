@@ -20,8 +20,11 @@ export default function Stack() {
         </div>
 
         <div className="stack-grid reveal">
-          {TECH_STACK.map((tech) => (
-            <article key={tech.name} className="stack-item">
+          {TECH_STACK.map((tech, index) => (
+            <article
+              key={tech.name}
+              className={`stack-item${index === TECH_STACK.length - 1 ? ' stack-item-wide' : ''}`}
+            >
               <h3>{tech.name}</h3>
               <p className="detail">{tech.detail}</p>
               <div className="stack-tags">
@@ -53,7 +56,7 @@ export default function Stack() {
           <p>Empresas que utilizam as plataformas com as quais atuamos</p>
           <span className="ecosystem-note">
             Referências do ecossistema (não são clientes MCM) — mostram a escala
-            das stacks que entregamos: Odoo, n8n, WhatsApp Business e cloud.
+            das stacks que entregamos: Odoo, n8n, WhatsApp Business e Cloud.
           </span>
           <div className="ecosystem-grid">
             {ECOSYSTEM_USERS.map((group) => (

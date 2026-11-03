@@ -98,11 +98,6 @@ export const TECH_STACK = [
     usedBy: ['Medinfuse', 'Indupropil', 'Nubank / Zenvia'],
   },
   {
-    name: 'Next.js & SEO',
-    detail: 'Sites, domínio, CTAs e preview social',
-    usedBy: ['Consultoria MCM', 'landings comerciais'],
-  },
-  {
     name: 'AWS, Cloud & VPS',
     detail: 'Hospedagem, Docker, VPN, Odoo.sh',
     usedBy: ['Syma', 'Have', 'projetos enterprise'],
@@ -111,6 +106,11 @@ export const TECH_STACK = [
     name: 'Fiscal BR & CNAB',
     detail: 'NF (NF-e produto · NFS-e serviço), Avalara, PIX, boletos',
     usedBy: ['Pampeiro / SoftHill', 'Sylvia Design', 'OCA / KMEE'],
+  },
+  {
+    name: 'Site Personalizado & SEO',
+    detail: 'Domínio próprio, CTAs, preview social e conversão para WhatsApp',
+    usedBy: ['Consultoria MCM', 'landings comerciais'],
   },
 ] as const;
 
@@ -245,7 +245,7 @@ export const ECOSYSTEM_USERS = [
     ],
   },
   {
-    platform: 'AWS & cloud',
+    platform: 'AWS & Cloud',
     blurb: 'Infraestrutura onde muitas dessas soluções rodam em produção',
     companies: [
       'Netflix',
