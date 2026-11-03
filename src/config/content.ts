@@ -11,9 +11,9 @@ export const SOLUTIONS = [
       'WhatsApp Business (Meta oficial) ou Evolution',
       'Chatbox / inbox para o time da empresa atender como a marca',
       'Governança: IA responde sozinha ou escala para humano — por cliente e por fluxo',
-      'Templates, envio agendado e disparo em massa (sob consulta)',
-      'Orientação de custos e limites da Meta antes de operar',
-      'Opt-in/LGPD e registro no sistema que você já usa — com ou sem Odoo',
+      'Templates oficiais Meta: agendamento individual ou em massa a partir do CRM',
+      'Estimativa de custo do agendamento para N destinatários (tarifa Meta × mercado/DDI)',
+      'Orientação de limites da Meta, opt-in/LGPD e registro no sistema — com ou sem Odoo',
     ],
   },
   {
@@ -94,7 +94,7 @@ export const TECH_STACK = [
   },
   {
     name: 'WhatsApp (Meta / Evolution)',
-    detail: 'Agentes, chatbox, templates, agendamento e massa',
+    detail: 'Agentes, chatbox, agendamento, massa e estimativa de custo',
     usedBy: ['Medinfuse', 'Indupropil', 'Nubank / Zenvia'],
   },
   {

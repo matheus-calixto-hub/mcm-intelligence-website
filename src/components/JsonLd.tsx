@@ -55,7 +55,7 @@ export default function JsonLd() {
           '@type': 'Service',
           name: 'Agentes de IA no WhatsApp',
           description:
-            'Atendimento inteligente, chatbox humano, templates agendados, disparo em massa e integração com ERP/CRM.',
+            'Atendimento inteligente, chatbox humano, templates Meta agendados (individual ou em massa), estimativa de custo por destinatário e integração com ERP/CRM.',
         },
       },
       {

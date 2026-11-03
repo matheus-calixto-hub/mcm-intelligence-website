@@ -18,7 +18,7 @@ const POINTS = [
   },
   {
     title: 'Templates, agendamento e disparo em massa',
-    body: 'Templates aprovados na Meta, envio agendado a partir do CRM e campanhas em massa sob consulta — alinhamos escopo, custos da Meta e regras de opt-in/LGPD antes de subir.',
+    body: 'Templates aprovados na Meta, envio agendado a partir do CRM (lead, oportunidade ou contato) e em lote para N destinatários. No agendamento, estimativa de custo Meta por mensagem e pelo total — com base na categoria do template e no DDI de cada destinatário.',
   },
   {
     title: 'Independente do ERP',
