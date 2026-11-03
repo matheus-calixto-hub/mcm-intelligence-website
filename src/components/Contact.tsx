@@ -58,12 +58,6 @@ export default function Contact() {
               </dd>
             </div>
             <div>
-              <dt>E-mail</dt>
-              <dd>
-                <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
-              </dd>
-            </div>
-            <div>
               <dt>Base</dt>
               <dd>{COMPANY.location}</dd>
             </div>
