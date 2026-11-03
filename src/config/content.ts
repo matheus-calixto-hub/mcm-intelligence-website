@@ -90,7 +90,7 @@ export const TECH_STACK = [
   {
     name: 'n8n + LLMs',
     detail: 'Orquestração de agentes e automações',
-    usedBy: ['Indupropil', 'Medinfuse', 'operações comerciais'],
+    usedBy: ['Indupropil', 'Medinfuse', 'Operações Comerciais'],
   },
   {
     name: 'WhatsApp (Meta / Evolution)',
@@ -100,7 +100,7 @@ export const TECH_STACK = [
   {
     name: 'AWS, Cloud & VPS',
     detail: 'Hospedagem, Docker, VPN, Odoo.sh',
-    usedBy: ['Syma', 'Have', 'projetos enterprise'],
+    usedBy: ['Syma', 'Have', 'Projetos Enterprise'],
   },
   {
     name: 'Fiscal BR & CNAB',
@@ -110,7 +110,7 @@ export const TECH_STACK = [
   {
     name: 'Site Personalizado & SEO',
     detail: 'Domínio próprio, CTAs, preview social e conversão para WhatsApp',
-    usedBy: ['Consultoria MCM', 'landings comerciais'],
+    usedBy: ['Consultoria MCM', 'Landings Comerciais'],
   },
 ] as const;
 

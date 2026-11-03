@@ -27,7 +27,7 @@ export default function Hero() {
               Conversar no WhatsApp
             </a>
             <a href="#solucoes" className="btn btn-ghost-on-dark">
-              Ver o que entregamos
+              O que entregamos?
             </a>
           </div>
           <p className="hero-trust">
