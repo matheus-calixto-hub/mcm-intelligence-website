@@ -2,10 +2,12 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Solutions from "@/components/Solutions";
 import Agents from "@/components/Agents";
+import CtaBand from "@/components/CtaBand";
 import Stack from "@/components/Stack";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export default function Home() {
   return (
@@ -15,11 +17,13 @@ export default function Home() {
         <Hero />
         <Solutions />
         <Agents />
+        <CtaBand />
         <Stack />
         <Experience />
         <Contact />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }

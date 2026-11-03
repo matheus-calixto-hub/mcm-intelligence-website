@@ -14,8 +14,8 @@ export default function Solutions() {
           <h2>Solução de negócio primeiro. Tecnologia a serviço disso.</h2>
           <p>
             Não vendemos ferramenta pela ferramenta. Montamos o desenho certo
-            para o seu processo — com ou sem Odoo, com ou sem chat interno —
-            e implementamos de ponta a ponta.
+            para o seu processo — com ou sem Odoo, com chatbox humano e
+            governança da IA — e implementamos de ponta a ponta.
           </p>
         </div>
 

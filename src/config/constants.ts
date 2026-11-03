@@ -21,9 +21,11 @@ export const COMPANY = {
 export const WHATSAPP_MESSAGES = {
   demo: 'Olá, Matheus! Quero conhecer os agentes de IA da MCM e ver como encaixa no meu negócio.',
   agents: 'Olá! Tenho interesse em agentes de IA no WhatsApp (atendimento, templates agendados e/ou disparo em massa). Quero entender escopo e custos da Meta.',
+  sites:
+    'Olá! Quero um site personalizado para a minha empresa (domínio próprio, SEO, CTAs e conversão para WhatsApp), com opção de assistente de IA e evolução para vendas/NFS quando fizer sentido.',
   consulting: 'Olá! Gostaria de conversar sobre consultoria / arquitetura de solução para a minha empresa.',
   odoo: 'Olá! Preciso de apoio com Odoo (implantação, customização ou integração).',
-  integrations: 'Olá! Quero falar sobre integração entre sistemas / APIs / legado.',
+  integrations: 'Olá! Quero falar sobre Integrações entre sistemas / APIs / legado.',
   customQuote: 'Olá! Gostaria de um orçamento personalizado para a minha operação.',
 } as const;
 

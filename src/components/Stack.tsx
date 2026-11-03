@@ -1,7 +1,7 @@
 'use client';
 
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { CLIENT_LOGOS, TECH_STACK } from '@/config/content';
+import { CLIENT_LOGOS, ECOSYSTEM_USERS, TECH_STACK } from '@/config/content';
 
 export default function Stack() {
   const sectionRef = useScrollAnimation<HTMLElement>();
@@ -45,6 +45,27 @@ export default function Stack() {
               >
                 {client.name}
               </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="ecosystem-strip reveal">
+          <p>Empresas que utilizam as plataformas com as quais atuamos</p>
+          <span className="ecosystem-note">
+            Referências do ecossistema (não são clientes MCM) — mostram a escala
+            das stacks que entregamos: Odoo, n8n, WhatsApp Business e cloud.
+          </span>
+          <div className="ecosystem-grid">
+            {ECOSYSTEM_USERS.map((group) => (
+              <article key={group.platform} className="ecosystem-card">
+                <h3>{group.platform}</h3>
+                <p className="ecosystem-blurb">{group.blurb}</p>
+                <div className="ecosystem-tags">
+                  {group.companies.map((name) => (
+                    <span key={name}>{name}</span>
+                  ))}
+                </div>
+              </article>
             ))}
           </div>
         </div>

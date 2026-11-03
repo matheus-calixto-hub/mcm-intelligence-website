@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
 import { COMPANY } from "@/config/constants";
-import { getSiteUrl, SITE } from "@/config/site";
+import { getSiteUrl, OG_IMAGE, SITE } from "@/config/site";
 import JsonLd from "@/components/JsonLd";
 
 const fraunces = Fraunces({
@@ -18,6 +18,7 @@ const manrope = Manrope({
 });
 
 const siteUrl = getSiteUrl();
+const ogImageUrl = `${siteUrl}${OG_IMAGE.path}`;
 
 export const viewport: Viewport = {
   themeColor: [
@@ -60,12 +61,23 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: SITE.name,
     title: SITE.title,
-    description: SITE.description,
+    description: SITE.socialDescription,
+    images: [
+      {
+        url: ogImageUrl,
+        secureUrl: ogImageUrl,
+        width: OG_IMAGE.width,
+        height: OG_IMAGE.height,
+        alt: OG_IMAGE.alt,
+        type: OG_IMAGE.type,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: SITE.title,
-    description: SITE.description,
+    description: SITE.socialDescription,
+    images: [ogImageUrl],
   },
   robots: {
     index: true,

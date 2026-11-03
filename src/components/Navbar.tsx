@@ -73,7 +73,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Falar no WhatsApp
+              Conversar no WhatsApp
             </a>
           </div>
 
@@ -131,7 +131,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               onClick={closeMenu}
             >
-              Falar no WhatsApp
+              Conversar no WhatsApp
             </a>
           </div>
         </>

@@ -14,8 +14,8 @@ export default function Hero() {
           <h1>Agentes de IA e soluções de negócio — do WhatsApp ao ERP.</h1>
           <p>
             Arquitetura hands-on para quem precisa de resultado: agentes no
-            WhatsApp, integrações críticas e Odoo, sem amarrar o seu processo a
-            um único sistema.
+            WhatsApp com chatbox e governança, sites que convertem, Integrações
+            críticas e Odoo — sem amarrar o seu processo a um único sistema.
           </p>
           <div className="hero-cta">
             <a
@@ -26,10 +26,13 @@ export default function Hero() {
             >
               Conversar no WhatsApp
             </a>
-            <a href="#experiencia" className="btn btn-ghost-on-dark">
-              Ver experiência
+            <a href="#solucoes" className="btn btn-ghost-on-dark">
+              Ver o que entregamos
             </a>
           </div>
+          <p className="hero-trust">
+            Diagnóstico rápido · escopo e custo claros · São Paulo · Brasil
+          </p>
         </div>
       </div>
     </section>

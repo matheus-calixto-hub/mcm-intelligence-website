@@ -1,5 +1,5 @@
 import { COMPANY } from '@/config/constants';
-import { getSiteUrl, SITE } from '@/config/site';
+import { getSiteUrl, OG_IMAGE, SITE } from '@/config/site';
 
 export default function JsonLd() {
   const url = getSiteUrl();
@@ -12,7 +12,7 @@ export default function JsonLd() {
     alternateName: [COMPANY.name, COMPANY.shortName, `${COMPANY.shortName} Consultoria`, SITE.name],
     url,
     logo: `${url}/icon`,
-    image: `${url}/opengraph-image`,
+    image: `${url}${OG_IMAGE.path}`,
     description: SITE.description,
     email: COMPANY.email,
     telephone: COMPANY.whatsapp,
@@ -38,6 +38,8 @@ export default function JsonLd() {
     knowsAbout: [
       'Agentes de Inteligência Artificial',
       'WhatsApp Business API',
+      'Sites personalizados e SEO',
+      'Conversão e CTAs para WhatsApp',
       'Odoo ERP',
       'Integrações de sistemas',
       'n8n',
@@ -53,7 +55,16 @@ export default function JsonLd() {
           '@type': 'Service',
           name: 'Agentes de IA no WhatsApp',
           description:
-            'Atendimento inteligente, templates agendados, disparo em massa e integração com ERP/CRM.',
+            'Atendimento inteligente, chatbox humano, templates agendados, disparo em massa e integração com ERP/CRM.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Sites personalizados com conversão',
+          description:
+            'Site no domínio da empresa, SEO, preview social, CTAs para WhatsApp, Meta Business e Google Ads, com assistente de IA opcional e evolução para vendas e NFS-e.',
         },
       },
       {
@@ -62,7 +73,7 @@ export default function JsonLd() {
           '@type': 'Service',
           name: 'Consultoria e customização Odoo',
           description:
-            'Implantação, migração, módulos sob medida, fiscal BR e sustentação.',
+            'Implantação, migração, módulos sob medida, fiscal BR (NF-e e NFS-e) e sustentação.',
         },
       },
       {

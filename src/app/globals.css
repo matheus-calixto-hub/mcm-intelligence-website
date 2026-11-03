@@ -703,6 +703,82 @@ button {
 }
 
 /* ==========================================================================
+   Ecosystem (plataformas que usamos — marcas de referência)
+   ========================================================================== */
+.ecosystem-strip {
+  padding: 2.5rem 0 0;
+  border-top: 1px solid var(--line);
+  margin-top: 2.75rem;
+}
+
+.ecosystem-strip > p {
+  font-size: 0.8rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.55rem;
+}
+
+.ecosystem-note {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.35rem;
+  max-width: 42rem;
+  line-height: 1.45;
+}
+
+.ecosystem-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+  .ecosystem-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ecosystem-card {
+  padding: 1.15rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+}
+
+.ecosystem-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 550;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.35rem;
+}
+
+.ecosystem-blurb {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 0.85rem;
+  line-height: 1.4;
+}
+
+.ecosystem-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.ecosystem-tags span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--ink-soft);
+}
+
+/* ==========================================================================
    Experience / portfolio
    ========================================================================== */
 .experience-list {
@@ -813,6 +889,123 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+}
+
+.contact-bullets {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0 0 1.35rem;
+  padding: 0;
+}
+
+.contact-bullets li {
+  position: relative;
+  padding-left: 1.15rem;
+  font-size: 0.95rem;
+  font-weight: 550;
+  color: var(--ink-soft);
+}
+
+.contact-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Mid-page CTA band */
+.cta-band {
+  padding: 0 0 4.5rem;
+}
+
+.cta-band-inner {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+  background: var(--bg-deep);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 800px) {
+  .cta-band-inner {
+    grid-template-columns: 1.4fr 0.8fr;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 2.5rem 2.75rem;
+  }
+}
+
+.cta-band-inner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.8vw, 2.1rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.65rem;
+}
+
+.cta-band-inner p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.98rem;
+  max-width: 36rem;
+}
+
+.cta-band-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  align-items: flex-start;
+}
+
+.cta-band-note {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Floating WhatsApp */
+.wa-float {
+  position: fixed;
+  right: 1.1rem;
+  bottom: 1.1rem;
+  z-index: 80;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.05rem 0.85rem 0.95rem;
+  border-radius: 999px;
+  background: var(--whatsapp);
+  color: #fff;
+  box-shadow: 0 14px 32px -12px rgba(18, 140, 126, 0.75);
+  font-weight: 700;
+  font-size: 0.92rem;
+  transition: transform 0.2s var(--ease), background 0.2s;
+}
+
+.wa-float:hover {
+  background: #0f7669;
+  transform: translateY(-2px);
+}
+
+.wa-float-label {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .wa-float-label {
+    display: inline;
+  }
+}
+
+.hero-trust {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.62);
+  letter-spacing: 0.01em;
 }
 
 .contact-details {

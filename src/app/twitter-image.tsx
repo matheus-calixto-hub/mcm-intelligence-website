@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'MCM Consultoria — Agentes de IA, integrações e Odoo';
+export const alt = 'MCM Consultoria — Agentes de IA, Integrações e Odoo';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -56,7 +56,7 @@ export default function TwitterImage() {
               fontFamily: 'sans-serif',
             }}
           >
-            Agentes de IA no WhatsApp, integrações e Odoo — soluções de negócio hands-on.
+            Agentes de IA no WhatsApp, Integrações e Odoo — soluções de negócio hands-on.
           </div>
         </div>
 

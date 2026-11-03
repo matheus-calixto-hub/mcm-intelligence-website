@@ -11,13 +11,19 @@ export default function Contact() {
       <div className="container">
         <div className="contact-panel reveal">
           <div>
-            <span className="eyebrow">Contato</span>
-            <h2>Vamos falar do seu processo — não de um pacote fechado.</h2>
+            <span className="eyebrow">Próximo passo</span>
+            <h2>Fale no WhatsApp e saia com clareza — não com um PDF genérico.</h2>
             <p>
-              Diagnóstico rápido pelo WhatsApp. Se fizer sentido, desenhamos o
-              escopo (agente, integração, Odoo ou os três) e partimos para
-              entrega com prazo e preço claros.
+              Conta o processo (vendas, suporte, fiscal, integração). Em retorno
+              alinhamos o desenho, o que a IA pode responder, o que fica com o
+              time no chatbox e uma estimativa honesta de esforço e custo Meta.
             </p>
+            <ul className="contact-bullets">
+              <li>Sem compromisso para o primeiro diagnóstico</li>
+              <li>Escopo, prazo e preço antes de começar</li>
+              <li>Site, agente WhatsApp, Odoo ou Integrações — você escolhe o ponto de partida</li>
+              <li>Entrega hands-on — não só slide</li>
+            </ul>
             <div className="contact-actions">
               <a
                 href={getWhatsAppUrl(WHATSAPP_MESSAGES.customQuote)}
@@ -25,7 +31,15 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                WhatsApp
+                Conversar no WhatsApp agora
+              </a>
+              <a
+                href={getWhatsAppUrl(WHATSAPP_MESSAGES.sites)}
+                className="btn btn-ghost"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Orçar site + WhatsApp
               </a>
             </div>
           </div>
@@ -41,6 +55,12 @@ export default function Contact() {
                 >
                   {COMPANY.whatsappFormatted}
                 </a>
+              </dd>
+            </div>
+            <div>
+              <dt>E-mail</dt>
+              <dd>
+                <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
               </dd>
             </div>
             <div>

@@ -9,10 +9,25 @@ export const SOLUTIONS = [
     lead: 'Atendimento, qualificação e operação sem depender de chat interno do ERP.',
     points: [
       'WhatsApp Business (Meta oficial) ou Evolution',
+      'Chatbox / inbox para o time da empresa atender como a marca',
+      'Governança: IA responde sozinha ou escala para humano — por cliente e por fluxo',
       'Templates, envio agendado e disparo em massa (sob consulta)',
       'Orientação de custos e limites da Meta antes de operar',
-      'Handoff humano, opt-in/LGPD e registro no sistema que você já usa',
-      'Funciona com Odoo — ou sem ele',
+      'Opt-in/LGPD e registro no sistema que você já usa — com ou sem Odoo',
+    ],
+  },
+  {
+    id: 'sites',
+    title: 'Sites personalizados com conversão',
+    lead:
+      'Site da sua marca, no seu domínio — feito para ranquear, converter e levar o visitante ao WhatsApp (com ou sem assistente de IA).',
+    points: [
+      'Site sob medida (como o da Consultoria MCM): identidade, SEO técnico e preview social (WhatsApp, LinkedIn, Meta)',
+      'Domínio próprio, hospedagem e SSL — URL profissional da empresa',
+      'CTAs de conversão: botão flutuante, faixas de ação, copy que reduz atrito até o WhatsApp',
+      'Pronto para Meta Business e campanhas Google Ads / AdSense — landing e tracking alinhados ao funil',
+      'WhatsApp Business (Meta): assistente de IA no atendimento, com opção de desligar e continuar só com humano',
+      'Evolução sob demanda: do site + atendimento para vendas, pedidos, NFS-e / notas de serviço e operação no ERP',
     ],
   },
   {
@@ -33,7 +48,7 @@ export const SOLUTIONS = [
     points: [
       'Implantação, migração e upgrade',
       'Módulos sob medida e localização fiscal',
-      'Helpdesk, CRM, estoque, projeto, clínico',
+      'NF-e (produto) e NFS-e (serviço), estoque, CRM, helpdesk, clínico',
       'Squads e consultoria para consultorias e clientes finais',
     ],
   },
@@ -79,8 +94,13 @@ export const TECH_STACK = [
   },
   {
     name: 'WhatsApp (Meta / Evolution)',
-    detail: 'Agentes, templates, agendamento e massa',
+    detail: 'Agentes, chatbox, templates, agendamento e massa',
     usedBy: ['Medinfuse', 'Indupropil', 'Nubank / Zenvia'],
+  },
+  {
+    name: 'Next.js & SEO',
+    detail: 'Sites, domínio, CTAs e preview social',
+    usedBy: ['Consultoria MCM', 'landings comerciais'],
   },
   {
     name: 'AWS, Cloud & VPS',
@@ -89,15 +109,15 @@ export const TECH_STACK = [
   },
   {
     name: 'Fiscal BR & CNAB',
-    detail: 'NF-e, Avalara, PIX, boletos',
+    detail: 'NF (NF-e produto · NFS-e serviço), Avalara, PIX, boletos',
     usedBy: ['Pampeiro / SoftHill', 'Sylvia Design', 'OCA / KMEE'],
   },
 ] as const;
 
+/** Experiência em campo: empresa + o que foi entregue (sem cargos). */
 export const EXPERIENCES = [
   {
     period: '03/2026 – Atual',
-    role: 'Odoo Architect / Specialist',
     company: 'Have Consultoria',
     clients: 'Syma, Medinfuse, Indupropil',
     summary:
@@ -106,7 +126,6 @@ export const EXPERIENCES = [
   },
   {
     period: '03/2026 – 06/2026',
-    role: 'Odoo Systems Specialist',
     company: 'Multtiplus | TIS',
     clients: 'Angola',
     summary:
@@ -115,16 +134,14 @@ export const EXPERIENCES = [
   },
   {
     period: '12/2025',
-    role: 'Odoo Systems Specialist',
     company: 'SoftHill',
     clients: 'Grupo Pampeiro, Toniolo',
     summary:
-      'Odoo 18 Enterprise com localização BR e NF-e via Avalara — exportação/importação e compliance fiscal.',
-    highlights: ['Odoo 18', 'Avalara', 'Fiscal BR'],
+      'Odoo 18 Enterprise com localização BR — NF-e (produto) e NFS-e (serviço) via Avalara, exportação/importação e compliance fiscal.',
+    highlights: ['Odoo 18', 'Avalara', 'NF-e / NFS-e'],
   },
   {
     period: '09/2025 – 12/2025',
-    role: 'Tech Lead / Specialist',
     company: 'Asisto',
     clients: 'Sylvia Design',
     summary:
@@ -133,7 +150,6 @@ export const EXPERIENCES = [
   },
   {
     period: '05/2025 – 08/2025',
-    role: 'Odoo Architect',
     company: 'KMEE',
     clients: 'AG Capital TaxTech',
     summary:
@@ -142,16 +158,14 @@ export const EXPERIENCES = [
   },
   {
     period: '09/2024 – 05/2025',
-    role: 'Tech Lead / Implantação',
     company: 'Mazza.tech',
     clients: 'Infracommerce',
     summary:
-      'Liderança na implantação Odoo Enterprise (Helpdesk/SAC) no lugar do Salesforce, dashboards e integrações Databricks.',
+      'Implantação Odoo Enterprise (Helpdesk/SAC) no lugar do Salesforce, dashboards e integrações Databricks.',
     highlights: ['Helpdesk', 'Salesforce → Odoo', 'Databricks'],
   },
   {
     period: '04/2024 – 07/2024',
-    role: 'IT Engineer',
     company: 'Digisystem',
     clients: 'Nubank',
     summary:
@@ -160,7 +174,6 @@ export const EXPERIENCES = [
   },
   {
     period: '09/2021 – 09/2022',
-    role: 'Back-end Developer',
     company: 'Bluy',
     clients: undefined,
     summary:
@@ -169,7 +182,6 @@ export const EXPERIENCES = [
   },
   {
     period: 'Anteriores',
-    role: 'Full Stack / Automação',
     company: 'Waybee · Intelligenti · Asisto',
     clients: undefined,
     summary:
@@ -191,4 +203,55 @@ export const CLIENT_LOGOS = [
   { name: 'Intelligenti', url: 'https://www.intelligenti.com.br/' },
   { name: 'Digisystem', url: 'https://www.digisystem.com.br/' },
   { name: 'TIS', url: 'https://tis.ao/' },
+] as const;
+
+/**
+ * Empresas conhecidas que usam as plataformas com as quais atuamos.
+ * Não são clientes MCM — mostram o ecossistema das stacks.
+ */
+export const ECOSYSTEM_USERS = [
+  {
+    platform: 'Odoo',
+    blurb: 'ERP adotado por marcas e grupos industriais no mundo',
+    companies: [
+      'Toyota',
+      'Danone',
+      'Hyundai',
+      'Veolia',
+      'Decathlon',
+      'Bata',
+    ],
+  },
+  {
+    platform: 'n8n',
+    blurb: 'Automação e orquestração usadas em operações digitais de escala',
+    companies: [
+      'StepStone',
+      'Delivery Hero',
+      'Unbabel',
+      'Voicemod',
+    ],
+  },
+  {
+    platform: 'WhatsApp Business Platform',
+    blurb: 'Canal oficial Meta para atendimento e engajamento em escala',
+    companies: [
+      'Uber',
+      'Airbnb',
+      'KLM',
+      'Carrefour',
+      'Magalu',
+      'iFood',
+    ],
+  },
+  {
+    platform: 'AWS & cloud',
+    blurb: 'Infraestrutura onde muitas dessas soluções rodam em produção',
+    companies: [
+      'Netflix',
+      'NASA',
+      'BMW',
+      'Samsung',
+    ],
+  },
 ] as const;

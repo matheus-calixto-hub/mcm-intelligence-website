@@ -13,8 +13,9 @@ export default function Footer() {
               <span>.</span>
             </div>
             <p>
-              Consultoria em TI com foco em agentes de IA, integrações e Odoo.
-              Entrega hands-on para operações que precisam de resultado.
+              Consultoria em TI com foco em agentes de IA, sites com conversão,
+              Integrações e Odoo. Entrega hands-on para operações que precisam
+              de resultado.
             </p>
           </div>
 
