@@ -1050,7 +1050,8 @@ button {
 .hero-trust {
   margin-top: 1rem;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.62);
+  /* Azul do início do hero, bem suave — legível sobre o fade claro */
+  color: rgba(22, 54, 74, 0.72);
   letter-spacing: 0.01em;
 }
 
