@@ -19,6 +19,8 @@ const manrope = Manrope({
 
 const siteUrl = getSiteUrl();
 const ogImageUrl = `${siteUrl}${OG_IMAGE.path}`;
+/** App ID do Meta for Developers — remove o aviso fb:app_id no Sharing Debugger. */
+const fbAppId = process.env.FB_APP_ID?.trim();
 
 export const viewport: Viewport = {
   themeColor: [
@@ -93,6 +95,7 @@ export const metadata: Metadata = {
   other: {
     "geo.region": "BR-SP",
     "geo.placename": "São Paulo",
+    ...(fbAppId ? { "fb:app_id": fbAppId } : {}),
   },
 };
 
