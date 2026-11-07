@@ -1,17 +1,29 @@
 'use client';
 
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
 
-const LINKS = [
-  { href: '#solucoes', label: 'Soluções' },
-  { href: '#agentes', label: 'Agentes IA' },
-  { href: '#stack', label: 'Stack' },
-  { href: '#experiencia', label: 'Experiência' },
-  { href: '#contato', label: 'Contato' },
+const HOME_LINKS = [
+  { href: '/#solucoes', label: 'Soluções' },
+  { href: '/#agentes', label: 'Agentes IA' },
+  { href: '/#contato', label: 'Contato' },
+  { href: '/sobre', label: 'Sobre' },
+];
+
+const SOBRE_LINKS = [
+  { href: '/', label: 'Início' },
+  { href: '/sobre#stack', label: 'Stack' },
+  { href: '/sobre#experiencia', label: 'Experiência' },
+  { href: '/#contato', label: 'Contato' },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isSobre = pathname?.startsWith('/sobre');
+  const links = isSobre ? SOBRE_LINKS : HOME_LINKS;
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -45,24 +57,16 @@ export default function Navbar() {
         aria-label="Principal"
       >
         <div className="container navbar-inner">
-          <a
-            href="#"
-            className="logo"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-              closeMenu();
-            }}
-          >
+          <Link href="/" className="logo" onClick={closeMenu}>
             {COMPANY.brand}
             <span>.</span>
-          </a>
+          </Link>
 
           <div className="nav-links">
-            {LINKS.map((link) => (
-              <a key={link.href} href={link.href}>
+            {links.map((link) => (
+              <Link key={link.href} href={link.href} onClick={closeMenu}>
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -118,10 +122,10 @@ export default function Navbar() {
               </button>
             </div>
             <nav className="mobile-menu-nav">
-              {LINKS.map((link) => (
-                <a key={link.href} href={link.href} onClick={closeMenu}>
+              {links.map((link) => (
+                <Link key={link.href} href={link.href} onClick={closeMenu}>
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
             <a

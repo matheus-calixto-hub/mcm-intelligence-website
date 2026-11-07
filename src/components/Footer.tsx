@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
 
 export default function Footer() {
@@ -22,10 +23,10 @@ export default function Footer() {
           <div>
             <h4>Navegação</h4>
             <ul>
-              <li><a href="#solucoes">Soluções</a></li>
-              <li><a href="#agentes">Agentes IA</a></li>
-              <li><a href="#stack">Stack</a></li>
-              <li><a href="#experiencia">Experiência</a></li>
+              <li><Link href="/#solucoes">Soluções</Link></li>
+              <li><Link href="/#agentes">Agentes IA</Link></li>
+              <li><Link href="/sobre">Sobre</Link></li>
+              <li><Link href="/#contato">Contato</Link></li>
             </ul>
           </div>
 
