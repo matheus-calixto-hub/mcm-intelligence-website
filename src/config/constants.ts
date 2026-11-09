@@ -27,6 +27,8 @@ export const WHATSAPP_MESSAGES = {
   odoo: 'Olá! Preciso de apoio com Odoo (implantação, customização ou integração).',
   integrations: 'Olá! Quero falar sobre Integrações entre sistemas / APIs / legado.',
   customQuote: 'Olá! Gostaria de um orçamento personalizado para a minha operação.',
+  whatsappBooking:
+    'Olá! Quero conhecer o MCM WhatsApp Booking (agendar, remarcar e cancelar no WhatsApp). Podem me contar planos e como configurar o número?',
 } as const;
 
 /**
