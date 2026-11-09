@@ -2593,9 +2593,8 @@ body:has(.wb)::before {
   --ftg-char: #1c1814;
   --ftg-char-2: #2a241e;
   --ftg-line: rgba(196, 163, 90, 0.28);
-  /* Fraunces/Manrope do layout raiz — sem fetch extra na Vercel */
-  --ftg-display: var(--font-fraunces), "Georgia", serif;
-  --ftg-body: var(--font-manrope), system-ui, sans-serif;
+  --ftg-display: var(--font-ftg-display), "Arial Narrow", sans-serif;
+  --ftg-body: var(--font-ftg-body), system-ui, sans-serif;
   --ftg-ease: cubic-bezier(0.22, 1, 0.36, 1);
   min-height: 100vh;
   background: var(--ftg-paper);
