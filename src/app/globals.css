@@ -1482,7 +1482,11 @@ body:has(.wb)::before {
   }
 }
 
-.wb > *:not(.wb-ambient) {
+/* Só o conteúdo da landing — nunca Navbar/Footer (quebra position:fixed). */
+.wb > main,
+.wb > .product-browse,
+.wb > .wb-cta,
+.wb > .section {
   position: relative;
   z-index: 1;
 }
@@ -1699,16 +1703,23 @@ body:has(.wb)::before {
   }
 }
 
-/* Landings de produto com Navbar + âncoras do site */
-.has-site-chrome {
-  padding-top: var(--nav-h);
+/* Landings de produto: chrome do site fora do .wb */
+.product-page {
+  min-height: 100vh;
+}
+
+.product-page-body {
+  padding-top: calc(var(--nav-h) + 2.55rem);
 }
 
 .product-section-nav {
-  position: sticky;
+  position: fixed;
   top: var(--nav-h);
-  z-index: 90;
-  background: rgba(238, 241, 244, 0.92);
+  left: 0;
+  right: 0;
+  z-index: 99;
+  height: 2.55rem;
+  background: rgba(238, 241, 244, 0.96);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line-soft, rgba(15, 30, 45, 0.08));
@@ -1718,7 +1729,8 @@ body:has(.wb)::before {
   display: flex;
   align-items: center;
   gap: 1rem;
-  min-height: 2.6rem;
+  height: 100%;
+  min-height: 2.55rem;
   overflow-x: auto;
 }
 

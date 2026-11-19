@@ -54,16 +54,17 @@ export default function SlaDashboardLanding() {
   const waQuote = getWhatsAppUrl(WHATSAPP_MESSAGES.customQuote);
 
   return (
-    <div className="wb fu sla has-site-chrome" ref={pageRef}>
+    <div className="product-page" ref={pageRef}>
       <Navbar />
       <ProductSectionNav items={NAV} productLabel="Painel SLA" />
-      <div className="wb-ambient" aria-hidden="true">
-        <span className="wb-blob wb-blob-a" />
-        <span className="wb-blob wb-blob-b" />
-        <span className="wb-blob wb-blob-c" />
-      </div>
+      <div className="wb fu sla product-page-body">
+        <div className="wb-ambient" aria-hidden="true">
+          <span className="wb-blob wb-blob-a" />
+          <span className="wb-blob wb-blob-b" />
+          <span className="wb-blob wb-blob-c" />
+        </div>
 
-      <main>
+        <main>
         <section className="wb-hero" id="produto" aria-label="Painel SLA e Follow-up">
           <div className="wb-hero-plane" aria-hidden="true" />
           <div className="container wb-hero-grid">
@@ -241,9 +242,10 @@ export default function SlaDashboardLanding() {
             </div>
           </div>
         </section>
-      </main>
+        </main>
 
-      <ProductBrowse currentId="sla" />
+        <ProductBrowse currentId="sla" />
+      </div>
       <Footer />
       <WhatsAppFloat />
     </div>

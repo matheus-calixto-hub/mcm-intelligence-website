@@ -69,7 +69,7 @@ export const PRODUCTS = [
       'Gestor enxerga o time',
     ],
     image: '/products/followup-inbox.jpg',
-    visual: 'conversas',
+    visual: 'image',
     href: '/product/followup',
     cta: 'Conhecer o Follow-up',
   },

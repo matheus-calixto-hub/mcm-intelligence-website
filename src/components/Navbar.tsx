@@ -43,13 +43,16 @@ export default function Navbar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setIsScrolled(currentScrollY > 40);
-      setIsHidden(currentScrollY > lastScrollY && currentScrollY > 120);
+      // Em landings de produto o header fica fixo no topo (sem esconder).
+      setIsHidden(
+        !isProduct && currentScrollY > lastScrollY && currentScrollY > 120,
+      );
       setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, isProduct]);
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';

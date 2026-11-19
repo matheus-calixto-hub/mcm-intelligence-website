@@ -7,7 +7,6 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
-import MensagensWaConversasMock from '@/components/product/MensagensWaConversasMock';
 import ProductBrowse from '@/components/product/ProductBrowse';
 import ProductImpact from '@/components/product/ProductImpact';
 import ProductSectionNav from '@/components/product/ProductSectionNav';
@@ -54,51 +53,61 @@ export default function FollowUpLanding() {
   const waQuote = getWhatsAppUrl(WHATSAPP_MESSAGES.customQuote);
 
   return (
-    <div className="wb fu has-site-chrome" ref={pageRef}>
+    <div className="product-page" ref={pageRef}>
       <Navbar />
       <ProductSectionNav items={NAV} productLabel="Follow-up" />
-      <div className="wb-ambient" aria-hidden="true">
-        <span className="wb-blob wb-blob-a" />
-        <span className="wb-blob wb-blob-b" />
-        <span className="wb-blob wb-blob-c" />
-      </div>
+      <div className="wb fu product-page-body">
+        <div className="wb-ambient" aria-hidden="true">
+          <span className="wb-blob wb-blob-a" />
+          <span className="wb-blob wb-blob-b" />
+          <span className="wb-blob wb-blob-c" />
+        </div>
 
-      <main>
-        <section className="wb-hero" id="produto" aria-label="Follow-up comercial">
-          <div className="wb-hero-plane" aria-hidden="true" />
-          <div className="container wb-hero-grid">
-            <div className="wb-hero-copy wb-reveal wb-from-left">
-              <p className="wb-kicker">MCM Follow-up</p>
-              <h1>Lead não esfria. Time responde no prazo.</h1>
-              <p className="wb-lead">
-                WhatsApp e e-mail da empresa em um só lugar: fila do que precisa
-                de atenção, follow-up agendado e conversa com o nome de quem
-                atende — qualquer vendedor assume sem perder o fio.
-              </p>
-              <div className="wb-hero-cta">
-                <a href={waDemo} className="btn btn-on-dark wb-btn-lift" target="_blank" rel="noopener noreferrer">
-                  Quero ver demonstração
-                </a>
-                <a href="#como-funciona" className="btn btn-ghost-on-dark">
-                  Como funciona
-                </a>
+        <main>
+          <section className="wb-hero" id="produto" aria-label="Follow-up comercial">
+            <div className="wb-hero-plane" aria-hidden="true" />
+            <div className="container wb-hero-grid">
+              <div className="wb-hero-copy wb-reveal wb-from-left">
+                <p className="wb-kicker">MCM Follow-up</p>
+                <h1>Lead não esfria. Time responde no prazo.</h1>
+                <p className="wb-lead">
+                  WhatsApp e e-mail da empresa em um só lugar: fila do que precisa
+                  de atenção, follow-up agendado e conversa com o nome de quem
+                  atende — qualquer vendedor assume sem perder o fio.
+                </p>
+                <div className="wb-hero-cta">
+                  <a href={waDemo} className="btn btn-on-dark wb-btn-lift" target="_blank" rel="noopener noreferrer">
+                    Quero ver demonstração
+                  </a>
+                  <a href="#como-funciona" className="btn btn-ghost-on-dark">
+                    Como funciona
+                  </a>
+                </div>
+                <p className="wb-hero-note">
+                  Ideal para corretoras, clínicas comerciais e times de venda que
+                  vivem no zap.
+                </p>
               </div>
-              <p className="wb-hero-note">
-                Ideal para corretoras, clínicas comerciais e times de venda que
-                vivem no zap.
-              </p>
-            </div>
 
-            <div className="wb-phone-stage wb-reveal wb-from-right wb-reveal-d1">
-              <MensagensWaConversasMock />
-              <div className="wb-float wb-float-a wb-glass">
-                <strong>SLA</strong>
-                <span>Aguardando resposta · 2h 10</span>
+              <div className="wb-phone-stage wb-reveal wb-from-right wb-reveal-d1">
+                <div className="fu-hero-shot wb-glass-deep">
+                  <Image
+                    src="/products/followup-inbox.jpg"
+                    alt="Fila de atenção e chat no app Mensagens WA (Odoo)"
+                    width={1280}
+                    height={720}
+                    className="fu-hero-img"
+                    priority
+                  />
+                </div>
+                <div className="wb-float wb-float-a wb-glass">
+                  <strong>Fila de atenção</strong>
+                  <span>SLA · WhatsApp e e-mail</span>
+                </div>
+                <div className="wb-float wb-float-b wb-glass">Mensagens WA · Odoo</div>
               </div>
-              <div className="wb-float wb-float-b wb-glass">Conversas · Mensagens WA</div>
             </div>
-          </div>
-        </section>
+          </section>
 
         <section className="section wb-pain" aria-labelledby="fu-pain-title">
           <div className="container">
@@ -164,33 +173,36 @@ export default function FollowUpLanding() {
           </div>
         </section>
 
-        <section className="section" aria-labelledby="fu-sla-title">
+        <section className="section" aria-labelledby="fu-screen-title">
           <div className="container wb-setup-grid">
             <div className="wb-reveal wb-from-left">
               <div className="section-head">
-                <h2 id="fu-sla-title">Painel Visão geral incluso</h2>
+                <h2 id="fu-screen-title">A tela real do Mensagens WA</h2>
                 <p>
-                  Tempo de 1ª resposta, % no SLA, fila, Follow-ups disparados e
-                  gráficos — o que o sócio e o mercado cobram ver.
+                  Contato, triagem, janela 24h, tempo sem resposta e Chatbox —
+                  tudo no Odoo, com a assinatura de quem atende.
                 </p>
               </div>
               <ul className="wb-setup-list">
                 <li className="wb-glass">
-                  <strong>Vendedor</strong> — acompanha o próprio ritmo.
+                  <strong>Fila de atenção</strong> — quem espera retorno agora.
                 </li>
                 <li className="wb-glass">
-                  <strong>Sócio</strong> — equipe toda + filtro por responsável.
+                  <strong>Chat com nome</strong> — “Ana - JundMed” no WhatsApp.
+                </li>
+                <li className="wb-glass">
+                  <strong>Follow-up</strong> — próximo toque já agendado.
                 </li>
               </ul>
               <Link href="/product/sla-dashboard" className="btn btn-secondary" style={{ marginTop: '1rem' }}>
-                Conhecer o painel SLA
+                Ver também o painel SLA
               </Link>
             </div>
             <aside className="wb-reveal wb-from-right wb-reveal-d1">
               <div className="fu-hero-shot wb-glass-deep">
                 <Image
-                  src="/products/sla-dashboard.jpg"
-                  alt="Painel Visão geral SLA e Follow-up"
+                  src="/products/followup-contato.jpg"
+                  alt="Contato e Chatbox no app Mensagens WA"
                   width={1280}
                   height={720}
                   className="fu-hero-img"
@@ -276,9 +288,10 @@ export default function FollowUpLanding() {
             </div>
           </div>
         </section>
-      </main>
+        </main>
 
-      <ProductBrowse currentId="followup" />
+        <ProductBrowse currentId="followup" />
+      </div>
       <Footer />
       <WhatsAppFloat />
     </div>

@@ -52,17 +52,18 @@ export default function WhatsAppBookingLanding() {
   const wa = getWhatsAppUrl(WHATSAPP_MESSAGES.whatsappBooking);
 
   return (
-    <div className="wb has-site-chrome" ref={pageRef}>
+    <div className="product-page" ref={pageRef}>
       <Navbar />
       <ProductSectionNav items={NAV} productLabel="Agendamento" />
-      <div className="wb-ambient" aria-hidden="true">
-        <span className="wb-blob wb-blob-a" />
-        <span className="wb-blob wb-blob-b" />
-        <span className="wb-blob wb-blob-c" />
-        <span className="wb-blob wb-blob-d" />
-      </div>
+      <div className="wb product-page-body">
+        <div className="wb-ambient" aria-hidden="true">
+          <span className="wb-blob wb-blob-a" />
+          <span className="wb-blob wb-blob-b" />
+          <span className="wb-blob wb-blob-c" />
+          <span className="wb-blob wb-blob-d" />
+        </div>
 
-      <main>
+        <main>
         <section className="wb-hero" id="produto" aria-label="WhatsApp Booking">
           <div className="wb-hero-plane" aria-hidden="true" />
           <div className="container wb-hero-grid">
@@ -281,9 +282,10 @@ export default function WhatsAppBookingLanding() {
             </div>
           </div>
         </section>
-      </main>
+        </main>
 
-      <ProductBrowse currentId="booking" />
+        <ProductBrowse currentId="booking" />
+      </div>
       <Footer />
       <WhatsAppFloat />
     </div>

@@ -10,7 +10,7 @@ Acompanhar o que já está no ar / no código do site (`consultoria-mcm.com.br`)
 | Landing Follow-up | ✅ | `/product/followup` (+ bloco painel SLA) |
 | Landing Painel SLA | ✅ | `/product/sla-dashboard` — mock + print |
 | Visual Agendamento | ✅ | `BookingFlowPhone` — simulação Flow Meta (não IA) |
-| Visual Follow-up | ✅ | `MensagensWaConversasMock` — Conversas Odoo |
+| Visual Follow-up | ✅ | Prints reais SAC (`followup-inbox.jpg`, `followup-contato.jpg`) |
 | Visual Painel SLA | ✅ | print + `SlaDashboardMock` |
 | SEO indexável nas landings | ✅ | sitemap atualizado |
 
