@@ -106,6 +106,60 @@ export const PRODUCTS = [
   },
 ] as const;
 
+/**
+ * Ganhos típicos (marketing) — cenário de operação manual → com MCM.
+ * Não são métricas auditadas de um cliente específico; são faixas
+ * realistas para apresentar e calibrar na implantação.
+ */
+export const PRODUCT_IMPACT = {
+  eyebrow: 'O que muda na operação',
+  title: 'Menos trabalho manual. Mais resposta no prazo.',
+  lead:
+    'Empresas que ainda fazem follow-up e retorno no e-mail “na mão”, sem WhatsApp Business oficial e sem SLA, costumam perder tempo e lead no silêncio. O produto MCM cobre o que já dói hoje — WA + e-mail — e deixa o caminho aberto para omnichannel.',
+  disclaimer:
+    'Faixas ilustrativas de um cenário típico (atendimento manual → operação com fila, cadências e painel). Na implantação medimos o baseline da sua empresa e acompanhamos a evolução real.',
+  beforeAfter: [
+    {
+      before: 'Follow-up na planilha / cabeça de cada um',
+      after: 'Cadências no horário, com template e canal da empresa',
+    },
+    {
+      before: 'WhatsApp pessoal ou só e-mail manual',
+      after: 'WhatsApp Meta Business + e-mail no mesmo fluxo',
+    },
+    {
+      before: 'Ninguém sabe há quanto tempo o cliente espera',
+      after: 'Fila, Sem resposta e tempo de 1ª resposta no painel',
+    },
+    {
+      before: 'Sócio pergunta “e aquele lead?” sem dado',
+      after: '% no SLA, gráficos e filtro por responsável',
+    },
+  ],
+  metrics: [
+    {
+      value: '30–50%',
+      label: 'menos tempo em follow-up manual',
+      detail: 'disparos e lembretes saem sozinhos; o time foca em conversar',
+    },
+    {
+      value: '20–40%',
+      label: 'menos leads “esquecidos” na fila',
+      detail: 'atenção ordenada por atraso — WA e e-mail juntos',
+    },
+    {
+      value: '1 painel',
+      label: 'em vez de planilha + inbox + zap',
+      detail: 'SLA, fila, Sem resposta e Follow-ups no mesmo lugar',
+    },
+    {
+      value: '2 canais',
+      label: 'já omnichannel (WA + e-mail)',
+      detail: 'base pronta para evoluir outros canais depois',
+    },
+  ],
+} as const;
+
 export const TECH_STACK = [
   {
     name: 'Odoo',

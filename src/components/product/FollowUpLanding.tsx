@@ -4,9 +4,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
+import ProductImpact from '@/components/product/ProductImpact';
 
 const NAV = [
   { href: '#produto', label: 'Produto' },
+  { href: '#impacto', label: 'Ganhos' },
   { href: '#como-funciona', label: 'Como funciona' },
   { href: '#para-quem', label: 'Para quem' },
   { href: '#comecar', label: 'Começar' },
@@ -185,6 +187,8 @@ export default function FollowUpLanding() {
             </ul>
           </div>
         </section>
+
+        <ProductImpact />
 
         <section className="section wb-how" id="como-funciona" aria-labelledby="fu-how-title">
           <div className="container">

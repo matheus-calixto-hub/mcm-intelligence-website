@@ -4,10 +4,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
+import ProductImpact from '@/components/product/ProductImpact';
 import SlaDashboardMock from '@/components/product/SlaDashboardMock';
 
 const NAV = [
   { href: '#produto', label: 'Produto' },
+  { href: '#impacto', label: 'Ganhos' },
   { href: '#indicadores', label: 'Indicadores' },
   { href: '#regras', label: 'Quem vê o quê' },
   { href: '#comecar', label: 'Começar' },
@@ -162,6 +164,8 @@ export default function SlaDashboardLanding() {
             </div>
           </div>
         </section>
+
+        <ProductImpact />
 
         <section className="section" id="indicadores" aria-labelledby="sla-ind-title">
           <div className="container">

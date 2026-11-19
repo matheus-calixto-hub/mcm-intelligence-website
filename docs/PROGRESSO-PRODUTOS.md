@@ -34,4 +34,12 @@ Git addons: `github.com/matheus-calixto-hub/mcm-ce-addons`
 - Painel: 1ª resposta, % SLA, fila, Follow-ups, gráficos; vendedor vs sócio  
 - Agendamento: cliente marca/remarca no zap  
 
-*Última revisão: 2026-11-19 — painel Visão geral no site.*
+## Ganhos / marketing (`PRODUCT_IMPACT`)
+
+Bloco **Antes × Com MCM** + faixas **30–50%** tempo manual / **20–40%** leads esquecidos nas landings Follow-up e Painel SLA.
+
+- São **cenários típicos ilustrativos**, não métrica auditada de um cliente.  
+- Disclaimer no próprio bloco: na implantação medimos baseline e evolução real.  
+- Produto **já cobre** o que o pitch promete: FU automático, Meta WA + e-mail, fila/Sem resposta/SLA, painel sócio vs vendedor, base omnichannel.
+
+*Última revisão: 2026-11-19 — impacto + painel Visão geral no site.*
