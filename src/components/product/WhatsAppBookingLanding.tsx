@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
@@ -9,6 +10,15 @@ import { BOOKING_PLANS } from '@/config/whatsappBookingPricing';
 import BookingFlowPhone from '@/components/product/BookingFlowPhone';
 import ProductBrowse from '@/components/product/ProductBrowse';
 import ProductSectionNav from '@/components/product/ProductSectionNav';
+
+const FLOW_STRIP = [
+  { src: '/products/booking-chat.jpg', label: 'Chat · Agendar' },
+  { src: '/products/booking-flow-profissional.jpg', label: 'Profissional' },
+  { src: '/products/booking-flow-servicos.jpg', label: 'Serviços' },
+  { src: '/products/booking-flow-horarios.jpg', label: 'Horário' },
+  { src: '/products/booking-flow-revisao.jpg', label: 'Revisão' },
+  { src: '/products/booking-confirm.jpg', label: 'Confirmado' },
+] as const;
 
 const NAV = [
   { href: '#produto', label: 'Produto' },
@@ -91,11 +101,6 @@ export default function WhatsAppBookingLanding() {
 
             <div className="wb-phone-stage wb-reveal wb-from-right wb-reveal-d1">
               <BookingFlowPhone />
-              <div className="wb-float wb-float-a wb-glass">
-                <strong>Flow Meta</strong>
-                <span>Profissional → serviço → horário</span>
-              </div>
-              <div className="wb-float wb-float-b wb-glass">Confirma no zap ✓</div>
             </div>
           </div>
         </section>
@@ -152,6 +157,23 @@ export default function WhatsAppBookingLanding() {
                   chato.
                 </p>
               </article>
+            </div>
+
+            <div className="booking-flow-strip wb-reveal">
+              <p className="booking-flow-strip-label">Flow oficial no WhatsApp</p>
+              <div className="booking-flow-strip-grid">
+                {FLOW_STRIP.map((shot) => (
+                  <figure key={shot.src} className="booking-flow-shot">
+                    <Image
+                      src={shot.src}
+                      alt={shot.label}
+                      width={472}
+                      height={1024}
+                    />
+                    <figcaption>{shot.label}</figcaption>
+                  </figure>
+                ))}
+              </div>
             </div>
           </div>
         </section>

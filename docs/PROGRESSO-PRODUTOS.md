@@ -9,9 +9,9 @@ Acompanhar o que já está no ar / no código do site (`consultoria-mcm.com.br`)
 | Landing Agendamento | ✅ | `/product/whatsappbooking` |
 | Landing Follow-up | ✅ | `/product/followup` (+ bloco painel SLA) |
 | Landing Painel SLA | ✅ | `/product/sla-dashboard` — mock + print |
-| Visual Agendamento | ✅ | `BookingFlowPhone` — simulação Flow Meta (não IA) |
-| Visual Follow-up | ✅ | Prints reais SAC (`followup-inbox.jpg`, `followup-contato.jpg`) |
-| Visual Painel SLA | ✅ | print + `SlaDashboardMock` |
+| Visual Agendamento | ✅ | Prints reais Flow WA FTG (`booking-*.jpg` + carrossel) |
+| Visual Follow-up | ✅ | Prints reais SAC (sem balões flutuantes) |
+| Visual Painel SLA | ✅ | `SlaDashboardMock` no hero (sem overlay) |
 | SEO indexável nas landings | ✅ | sitemap atualizado |
 
 ## Mensagens WhatsApp (site)

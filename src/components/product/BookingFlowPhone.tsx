@@ -1,173 +1,83 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-const STEPS = [
+const SLIDES = [
   {
-    id: 'chat',
-    title: 'FTG Barbearia',
-    kind: 'chat' as const,
+    src: '/products/booking-chat.jpg',
+    label: 'Chat · botão Agendar',
   },
   {
-    id: 'attendant',
-    title: 'Profissional',
-    kind: 'flow' as const,
-    heading: 'Com quem você quer agendar?',
-    options: [
-      { title: 'João — Barbeiro', selected: true },
-      { title: 'Ana — Barbeira', selected: false },
-    ],
-    footer: 'Continuar',
+    src: '/products/booking-flow-profissional.jpg',
+    label: 'Flow · Profissional',
   },
   {
-    id: 'services',
-    title: 'Serviços',
-    kind: 'flow' as const,
-    heading: 'Quais serviços?',
-    options: [
-      { title: 'Corte', meta: 'R$ 35 · 30 min', selected: true },
-      { title: 'Barba', meta: 'R$ 25 · 20 min', selected: true },
-      { title: 'Sobrancelha', meta: 'R$ 15 · 10 min', selected: false },
-    ],
-    footer: 'Continuar',
+    src: '/products/booking-flow-servicos.jpg',
+    label: 'Flow · Serviços',
   },
   {
-    id: 'schedule',
-    title: 'Agenda',
-    kind: 'flow' as const,
-    heading: 'Escolha o horário',
-    slots: ['09:00', '10:00', '11:30', '14:00', '15:30', '17:00'],
-    selectedSlot: '10:00',
-    day: 'Qui, 26 nov',
-    footer: 'Continuar',
+    src: '/products/booking-flow-data.jpg',
+    label: 'Flow · Data',
   },
   {
-    id: 'review',
-    title: 'Revisão',
-    kind: 'flow' as const,
-    heading: 'Confira seu agendamento',
-    summary: [
-      ['Profissional', 'João — Barbeiro'],
-      ['Serviços', 'Corte + Barba'],
-      ['Quando', 'Qui, 26 nov · 10:00'],
-      ['Total', 'R$ 60'],
-    ],
-    footer: 'Confirmar',
+    src: '/products/booking-flow-horarios.jpg',
+    label: 'Flow · Horário',
   },
   {
-    id: 'done',
-    title: 'FTG Barbearia',
-    kind: 'done' as const,
+    src: '/products/booking-flow-revisao.jpg',
+    label: 'Flow · Revisão',
   },
-];
+  {
+    src: '/products/booking-confirm.jpg',
+    label: 'Confirmado no zap',
+  },
+  {
+    src: '/products/booking-manage.jpg',
+    label: 'Remarcar / cancelar',
+  },
+] as const;
 
-/** Simulação do Flow Meta de agendamento (profissional → serviços → agenda → revisão). */
+/** Preview oficial do Flow Meta — prints reais FTG Barbearia. */
 export default function BookingFlowPhone({ compact = false }: { compact?: boolean }) {
   const [step, setStep] = useState(0);
 
   useEffect(() => {
     const t = window.setInterval(() => {
-      setStep((s) => (s + 1) % STEPS.length);
-    }, 2800);
+      setStep((s) => (s + 1) % SLIDES.length);
+    }, 3200);
     return () => window.clearInterval(t);
   }, []);
 
-  const current = STEPS[step];
+  const current = SLIDES[step];
 
   return (
-    <div className={`bk-phone ${compact ? 'is-compact' : ''}`} aria-hidden="true">
+    <div className={`bk-phone bk-phone-real ${compact ? 'is-compact' : ''}`}>
       <div className="bk-phone-bezel">
         <div className="bk-phone-notch" />
-        <div className="bk-phone-screen">
-          <header className="bk-wa-head">
-            <span className="bk-wa-back">‹</span>
-            <div>
-              <strong>{current.title}</strong>
-              <em>WhatsApp Business</em>
-            </div>
-          </header>
-
-          {current.kind === 'chat' && (
-            <div className="bk-chat">
-              <div className="bk-bubble in">
-                Olá! Quer marcar um horário? Toque abaixo e escolha profissional,
-                serviço e horário.
-              </div>
-              <div className="bk-flow-cta">Agendar horário</div>
-              <div className="bk-bubble out">Agendar horário</div>
-            </div>
-          )}
-
-          {current.kind === 'flow' && (
-            <div className="bk-flow">
-              <p className="bk-flow-kicker">Formulário do Flow</p>
-              <h4>{current.heading}</h4>
-              {'day' in current && current.day && (
-                <p className="bk-flow-day">{current.day}</p>
-              )}
-              {'options' in current && current.options && (
-                <ul className="bk-flow-options">
-                  {current.options.map((opt) => (
-                    <li key={opt.title} className={opt.selected ? 'is-on' : ''}>
-                      <span className="bk-radio" />
-                      <div>
-                        <strong>{opt.title}</strong>
-                        {'meta' in opt && opt.meta ? <em>{opt.meta}</em> : null}
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {'slots' in current && current.slots && (
-                <div className="bk-slots">
-                  {current.slots.map((slot) => (
-                    <span
-                      key={slot}
-                      className={slot === current.selectedSlot ? 'is-on' : ''}
-                    >
-                      {slot}
-                    </span>
-                  ))}
-                </div>
-              )}
-              {'summary' in current && current.summary && (
-                <dl className="bk-summary">
-                  {current.summary.map(([k, v]) => (
-                    <div key={k}>
-                      <dt>{k}</dt>
-                      <dd>{v}</dd>
-                    </div>
-                  ))}
-                </dl>
-              )}
-              <button type="button" className="bk-flow-footer">
-                {current.footer}
-              </button>
-            </div>
-          )}
-
-          {current.kind === 'done' && (
-            <div className="bk-chat">
-              <div className="bk-bubble in">
-                ✅ Agendamento confirmado
-                <br />
-                João · Corte + Barba
-                <br />
-                Qui, 26 nov às 10:00
-              </div>
-              <div className="bk-bubble in muted">
-                Precisa remarcar? Abra o painel no WhatsApp.
-              </div>
-            </div>
-          )}
-
-          <div className="bk-dots">
-            {STEPS.map((s, i) => (
-              <i key={s.id} className={i === step ? 'is-on' : ''} />
+        <div className="bk-phone-screen bk-phone-screen-real">
+          <Image
+            src={current.src}
+            alt={current.label}
+            width={472}
+            height={1024}
+            className="bk-phone-shot"
+            priority={!compact && step === 0}
+          />
+          <div className="bk-dots bk-dots-over">
+            {SLIDES.map((s, i) => (
+              <button
+                key={s.src}
+                type="button"
+                className={i === step ? 'is-on' : ''}
+                aria-label={s.label}
+                onClick={() => setStep(i)}
+              />
             ))}
           </div>
         </div>
       </div>
+      <p className="bk-phone-caption">{current.label}</p>
     </div>
   );
 }

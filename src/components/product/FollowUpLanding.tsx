@@ -90,7 +90,7 @@ export default function FollowUpLanding() {
               </div>
 
               <div className="wb-phone-stage wb-reveal wb-from-right wb-reveal-d1">
-                <div className="fu-hero-shot wb-glass-deep">
+                <div className="fu-hero-shot">
                   <Image
                     src="/products/followup-inbox.jpg"
                     alt="Fila de atenção e chat no app Mensagens WA (Odoo)"
@@ -100,11 +100,6 @@ export default function FollowUpLanding() {
                     priority
                   />
                 </div>
-                <div className="wb-float wb-float-a wb-glass">
-                  <strong>Fila de atenção</strong>
-                  <span>SLA · WhatsApp e e-mail</span>
-                </div>
-                <div className="wb-float wb-float-b wb-glass">Mensagens WA · Odoo</div>
               </div>
             </div>
           </section>
@@ -199,7 +194,7 @@ export default function FollowUpLanding() {
               </Link>
             </div>
             <aside className="wb-reveal wb-from-right wb-reveal-d1">
-              <div className="fu-hero-shot wb-glass-deep">
+              <div className="fu-hero-shot">
                 <Image
                   src="/products/followup-contato.jpg"
                   alt="Contato e Chatbox no app Mensagens WA"

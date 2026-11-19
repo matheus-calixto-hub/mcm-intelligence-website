@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import Footer from '@/components/Footer';
@@ -91,21 +90,11 @@ export default function SlaDashboardLanding() {
             </div>
 
             <div className="wb-phone-stage wb-reveal wb-from-right wb-reveal-d1">
-              <div className="fu-hero-shot wb-glass-deep">
-                <Image
-                  src="/products/sla-dashboard.jpg"
-                  alt="Painel Visão geral com KPIs de SLA e gráficos de Follow-up"
-                  width={1280}
-                  height={720}
-                  className="fu-hero-img"
-                  priority
-                />
+              <div className="fu-hero-shot sla-hero-shot">
+                <div className="sla-mock-frame">
+                  <SlaDashboardMock />
+                </div>
               </div>
-              <div className="wb-float wb-float-a wb-glass">
-                <strong>87%</strong>
-                <span>respostas no SLA</span>
-              </div>
-              <div className="wb-float wb-float-b wb-glass">1ª resp. WA · 12 min</div>
             </div>
           </div>
         </section>
@@ -122,7 +111,7 @@ export default function SlaDashboardLanding() {
               </p>
             </div>
 
-            <div className="sla-mock-frame wb-reveal wb-reveal-d1 wb-glass-deep">
+            <div className="sla-mock-frame sla-mock-frame-lg wb-reveal wb-reveal-d1">
               <SlaDashboardMock />
             </div>
 

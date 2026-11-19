@@ -3429,9 +3429,11 @@ body:has(.wb)::before {
 
 .fu-hero-shot {
   overflow: hidden;
-  border-radius: 1.25rem;
+  border-radius: 1rem;
   max-width: 100%;
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
+  background: #fff;
+  border: 1px solid rgba(15, 30, 45, 0.1);
+  box-shadow: 0 22px 48px -24px rgba(0, 0, 0, 0.45);
 }
 
 .fu-hero-img {
@@ -3441,8 +3443,149 @@ body:has(.wb)::before {
   vertical-align: middle;
 }
 
-.fu .wb-phone-stage {
+.fu .wb-phone-stage,
+.sla .wb-phone-stage,
+.wb .wb-phone-stage {
   position: relative;
+  min-height: 0;
+}
+
+.sla-hero-shot {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.sla-hero-shot .sla-mock-frame {
+  margin: 0;
+  padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 1rem;
+  box-shadow: 0 22px 48px -24px rgba(0, 0, 0, 0.45);
+}
+
+.sla-mock-frame-lg {
+  padding: 0.85rem;
+  border-radius: 1.15rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(15, 30, 45, 0.08);
+  box-shadow: 0 18px 40px rgba(12, 27, 42, 0.08);
+}
+
+/* Prints reais do Flow no celular */
+.bk-phone-real .bk-phone-bezel {
+  background: #111;
+  padding: 0.45rem;
+}
+
+.bk-phone-screen-real {
+  background: #000;
+  padding: 0;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.bk-phone-shot {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bk-dots-over {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.55rem;
+  background: transparent;
+  gap: 0.35rem;
+}
+
+.bk-dots-over button {
+  width: 0.4rem;
+  height: 0.4rem;
+  border: 0;
+  border-radius: 999px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+}
+
+.bk-dots-over button.is-on {
+  width: 1rem;
+  background: #25d366;
+}
+
+.bk-phone-caption {
+  margin: 0.65rem 0 0;
+  text-align: center;
+  font-size: 0.78rem;
+  color: rgba(232, 238, 243, 0.85);
+  font-weight: 650;
+}
+
+.product-home-media,
+.product-card-media {
+  background: #f1f5f9;
+}
+
+.product-card-media-live,
+.product-home-media-live {
+  background: #0b1220;
+}
+
+.booking-flow-strip {
+  margin-top: 2.25rem;
+}
+
+.booking-flow-strip-label {
+  margin: 0 0 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0f766e;
+}
+
+.booking-flow-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+@media (max-width: 1100px) {
+  .booking-flow-strip-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .booking-flow-strip-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.booking-flow-shot {
+  margin: 0;
+  background: #0b1220;
+  border-radius: 0.85rem;
+  overflow: hidden;
+  border: 1px solid rgba(15, 30, 45, 0.12);
+  box-shadow: 0 14px 32px -22px rgba(0, 0, 0, 0.45);
+}
+
+.booking-flow-shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.booking-flow-shot figcaption {
+  padding: 0.45rem 0.5rem 0.55rem;
+  font-size: 0.72rem;
+  text-align: center;
+  color: #e8eef3;
+  background: #0b1220;
 }
 
 /* ---- Mock painel SLA (landing) ---- */
