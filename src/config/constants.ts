@@ -11,7 +11,6 @@ export const COMPANY = {
   cnpj: '32.434.264/0001-40',
   whatsapp: '+5511976218826',
   whatsappFormatted: '+55 11 97621-8826',
-  email: 'matheus.calixto.ti@gmail.com',
   phone: '+55 11 97621-8826',
   location: 'São Paulo, Brasil',
 } as const;

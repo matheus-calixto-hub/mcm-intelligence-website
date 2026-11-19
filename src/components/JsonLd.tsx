@@ -14,7 +14,6 @@ export default function JsonLd() {
     logo: `${url}/icon`,
     image: `${url}${OG_IMAGE.path}`,
     description: SITE.description,
-    email: COMPANY.email,
     telephone: COMPANY.whatsapp,
     taxID: COMPANY.cnpj,
     vatID: COMPANY.cnpj,
@@ -35,7 +34,6 @@ export default function JsonLd() {
       '@type': 'Person',
       name: 'Matheus Muniz',
       jobTitle: 'Consultor de operação e atendimento',
-      email: COMPANY.email,
     },
     knowsAbout: [
       'Atendimento comercial no WhatsApp',
@@ -90,7 +88,6 @@ export default function JsonLd() {
       '@type': 'ContactPoint',
       contactType: 'sales',
       telephone: COMPANY.whatsapp,
-      email: COMPANY.email,
       availableLanguage: ['Portuguese', 'pt-BR'],
       areaServed: 'BR',
     },
