@@ -73,7 +73,7 @@ export default function WhatsAppBookingLanding() {
           <span className="wb-blob wb-blob-d" />
         </div>
 
-        <main>
+        <main id="conteudo">
         <section className="wb-hero" id="produto" aria-label="WhatsApp Booking">
           <div className="wb-hero-plane" aria-hidden="true" />
           <div className="container wb-hero-grid">

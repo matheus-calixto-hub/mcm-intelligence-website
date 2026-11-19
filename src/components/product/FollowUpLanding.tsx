@@ -63,7 +63,7 @@ export default function FollowUpLanding() {
           <span className="wb-blob wb-blob-c" />
         </div>
 
-        <main>
+        <main id="conteudo">
           <section className="wb-hero" id="produto" aria-label="Follow-up comercial">
             <div className="wb-hero-plane" aria-hidden="true" />
             <div className="container wb-hero-grid">

@@ -100,7 +100,8 @@ npm run start
 
 Conteúdo editorial: `src/config/content.ts` · CTAs WhatsApp: `src/config/constants.ts`  
 Progresso: [`docs/PROGRESSO-PRODUTOS.md`](docs/PROGRESSO-PRODUTOS.md)  
-Imagens: `public/products/` (`followup-inbox.jpg`, `sla-dashboard.jpg`, `booking-agenda.jpg`)
+SEO / tráfego: [`docs/SEO.md`](docs/SEO.md) · helper `src/lib/seo.ts`  
+Imagens: `public/products/` (prints Follow-up, Flow Booking, painel)
 
 ## 📁 Estrutura do Projeto
 

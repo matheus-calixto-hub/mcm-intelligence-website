@@ -49,6 +49,7 @@ export default function JsonLd() {
         itemOffered: {
           '@type': 'Service',
           name: 'Follow-up comercial no WhatsApp',
+          url: `${url}/product/followup`,
           description:
             'Fila, prazos e cadências para o time atender e acompanhar leads no WhatsApp e no e-mail da empresa.',
         },
@@ -57,7 +58,18 @@ export default function JsonLd() {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
+          name: 'Painel SLA e Follow-up',
+          url: `${url}/product/sla-dashboard`,
+          description:
+            'Indicadores de 1ª resposta, % no SLA, fila e Follow-ups — visão do vendedor e do sócio.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
           name: 'Agendamento pelo WhatsApp',
+          url: `${url}/product/whatsappbooking`,
           description:
             'Cliente marca, remarca e cancela no WhatsApp; gestor libera horários sem painel complicado.',
         },

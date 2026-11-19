@@ -4,31 +4,61 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import ProductVisual from '@/components/product/ProductVisual';
+import SeoJsonLd from '@/components/SeoJsonLd';
 import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
 import { PRODUCTS } from '@/config/content';
-import { getSiteUrl, SITE } from '@/config/site';
+import { getSiteUrl, OG_IMAGE } from '@/config/site';
+import { breadcrumbJsonLd, buildPageMetadata } from '@/lib/seo';
 
 const path = '/produtos';
-const title = 'Produtos — Follow-up, Painel SLA e Agendamento no WhatsApp';
+const title = 'Produtos — Follow-up, Painel SLA e Agendamento';
 const description =
-  'Follow-up comercial, painel de SLA com gráficos e agendamento pelo WhatsApp. Demonstração e orçamento no zap com a MCM.';
+  'Escolha: follow-up comercial com fila e SLA, painel de indicadores ou agendamento pelo WhatsApp. Demonstração e orçamento com a MCM.';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
+  path,
   title,
   description,
-  alternates: { canonical: path },
-  openGraph: {
-    title: `${title} | ${SITE.name}`,
-    description,
-    url: `${getSiteUrl()}${path}`,
-  },
-};
+  imagePath: OG_IMAGE.path,
+  imageAlt: OG_IMAGE.alt,
+  imageWidth: OG_IMAGE.width,
+  imageHeight: OG_IMAGE.height,
+  keywords: [
+    'produtos MCM Consultoria',
+    'follow-up WhatsApp',
+    'painel SLA',
+    'agendamento WhatsApp',
+  ],
+});
 
 export default function ProdutosPage() {
   const wa = getWhatsAppUrl(WHATSAPP_MESSAGES.products);
+  const base = getSiteUrl();
+
+  const itemList = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Produtos MCM',
+    itemListElement: PRODUCTS.map((product, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: product.name,
+      url: `${base}${product.href}`,
+      description: product.blurb,
+    })),
+  };
 
   return (
     <div>
+      <SeoJsonLd
+        data={[
+          breadcrumbJsonLd([
+            { name: 'Início', path: '/' },
+            { name: 'Produtos', path },
+          ]),
+          itemList,
+        ]}
+      />
       <Navbar />
       <main id="conteudo">
         <section className="section products-hero">

@@ -107,6 +107,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${fraunces.variable} ${manrope.variable} antialiased`}>
+        <a href="#conteudo" className="skip-link">
+          Ir para o conteúdo
+        </a>
         <JsonLd />
         {children}
       </body>

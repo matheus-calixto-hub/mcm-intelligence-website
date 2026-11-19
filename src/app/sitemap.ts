@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getSiteUrl } from '@/config/site';
 
+/** Apenas URLs indexáveis (landing cliente FTG fica fora — noindex). */
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();
   const lastModified = new Date();
@@ -40,13 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${base}/sobre`,
       lastModified,
       changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/ftgbarbearia`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.4,
+      priority: 0.65,
     },
   ];
 }
