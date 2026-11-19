@@ -234,16 +234,27 @@ button {
   background: #0f7669;
 }
 
-/* Reveal animation */
+/* Reveal: sempre legível; animação só reforça (não trava no 4G) */
 .reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
-}
-
-.reveal.is-visible {
   opacity: 1;
   transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal.is-visible {
+    animation: mcm-soft-in 0.45s var(--ease) both;
+  }
+}
+
+@keyframes mcm-soft-in {
+  from {
+    opacity: 0.55;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* ==========================================================================
@@ -1533,41 +1544,67 @@ body:has(.wb)::before {
     0 28px 56px -28px rgba(0, 0, 0, 0.35);
 }
 
-/* --- Reveal: desliza de baixo / lados (transition, sem lag) --- */
+/* --- Reveal: conteúdo sempre visível; motion só quando .is-in --- */
 .wb-reveal {
-  opacity: 0;
-  transform: translate3d(0, 40px, 0);
-  transition:
-    opacity 0.55s var(--ease),
-    transform 0.55s var(--ease);
-  transition-delay: 0s;
-}
-
-.wb-reveal.wb-from-left {
-  transform: translate3d(-52px, 18px, 0);
-}
-
-.wb-reveal.wb-from-right {
-  transform: translate3d(52px, 18px, 0);
-}
-
-.wb-reveal.is-in {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+  transform: none;
 }
 
-.wb-reveal-delay,
-.wb-reveal-d1 {
-  transition-delay: 0.06s;
+@media (prefers-reduced-motion: no-preference) {
+  .wb-reveal.is-in {
+    animation: wb-soft-in 0.4s var(--ease) both;
+  }
+  .wb-reveal.wb-from-left.is-in {
+    animation-name: wb-soft-in-left;
+  }
+  .wb-reveal.wb-from-right.is-in {
+    animation-name: wb-soft-in-right;
+  }
+  .wb-reveal-d1.is-in {
+    animation-delay: 0.04s;
+  }
+  .wb-reveal-d2.is-in {
+    animation-delay: 0.08s;
+  }
+  .wb-reveal-d3.is-in {
+    animation-delay: 0.12s;
+  }
+  .wb-reveal-d4.is-in {
+    animation-delay: 0.16s;
+  }
 }
-.wb-reveal-d2 {
-  transition-delay: 0.14s;
+
+@keyframes wb-soft-in {
+  from {
+    opacity: 0.5;
+    transform: translate3d(0, 12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
-.wb-reveal-d3 {
-  transition-delay: 0.22s;
+
+@keyframes wb-soft-in-left {
+  from {
+    opacity: 0.5;
+    transform: translate3d(-16px, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
-.wb-reveal-d4 {
-  transition-delay: 0.3s;
+
+@keyframes wb-soft-in-right {
+  from {
+    opacity: 0.5;
+    transform: translate3d(16px, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 /* Float só em decoração — cards interativos não usam (evita lag no hover) */
@@ -1591,16 +1628,15 @@ body:has(.wb)::before {
   }
 }
 
-.wb-card-hover.is-in {
+.wb-card-hover {
   transition:
-    opacity 0.55s var(--ease),
     transform 0.3s var(--ease),
     border-color 0.3s var(--ease),
     background 0.3s var(--ease),
     box-shadow 0.3s var(--ease);
 }
 
-.wb-card-hover.is-in:hover {
+.wb-card-hover:hover {
   transform: translate3d(0, -5px, 0);
   border-color: rgba(62, 207, 172, 0.55);
   box-shadow:
@@ -2884,6 +2920,16 @@ body:has(.wb)::before {
   color: var(--wb-teal);
 }
 
+/* Mobile / 4G: menos animação contínua = menos jank */
+@media (max-width: 768px) {
+  .wb-blob,
+  .wb-float,
+  .wb-cta-orb,
+  .wb-cta-chip-float {
+    animation: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .wb-phone,
   .wb-bubble,
@@ -2900,7 +2946,7 @@ body:has(.wb)::before {
     opacity: 1 !important;
     transform: none !important;
   }
-  .wb-card-hover.is-in:hover,
+  .wb-card-hover:hover,
   .wb-btn-lift:hover {
     transform: none !important;
   }

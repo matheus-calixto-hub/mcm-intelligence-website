@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
@@ -12,6 +11,7 @@ import ProductDemoVideo from '@/components/product/ProductDemoVideo';
 import ProductImpact from '@/components/product/ProductImpact';
 import ProductPhoneGallery from '@/components/product/ProductPhoneGallery';
 import ProductSectionNav from '@/components/product/ProductSectionNav';
+import { useWbReveal } from '@/hooks/useWbReveal';
 
 const NAV = [
   { href: '#produto', label: 'Produto' },
@@ -65,36 +65,8 @@ const MOBILE_SLIDES = [
   },
 ] as const;
 
-function useReveal() {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const root = ref.current;
-    if (!root) return;
-    const nodes = root.querySelectorAll('.wb-reveal');
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduced) {
-      nodes.forEach((n) => n.classList.add('is-in'));
-      return;
-    }
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-in');
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' },
-    );
-    nodes.forEach((n) => io.observe(n));
-    return () => io.disconnect();
-  }, []);
-  return ref;
-}
-
 export default function FollowUpLanding() {
-  const pageRef = useReveal();
+  const pageRef = useWbReveal();
   const waDemo = getWhatsAppUrl(WHATSAPP_MESSAGES.followup);
   const waQuote = getWhatsAppUrl(WHATSAPP_MESSAGES.customQuote);
 

@@ -13,7 +13,7 @@ type Props = {
 };
 
 /**
- * Demo do produto: loop mudo em destaque + opção de ver a gravação completa.
+ * Demo do produto: poster primeiro; só baixa/toca o vídeo quando entra na tela.
  */
 export default function ProductDemoVideo({
   loopSrc,
@@ -23,8 +23,10 @@ export default function ProductDemoVideo({
   caption = 'Gravação real do SAC — fila, chat, follow-up e painel.',
 }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const frameRef = useRef<HTMLDivElement>(null);
   const [mode, setMode] = useState<'loop' | 'full'>('loop');
   const [reduced, setReduced] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -35,30 +37,46 @@ export default function ProductDemoVideo({
   }, []);
 
   useEffect(() => {
+    const node = frameRef.current;
+    if (!node) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setShouldLoad(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: '80px 0px', threshold: 0.05 },
+    );
+    io.observe(node);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
     const el = videoRef.current;
-    if (!el) return;
+    if (!el || !shouldLoad) return;
     el.load();
     if (mode === 'loop' && !reduced) {
       el.play().catch(() => undefined);
     }
-  }, [mode, reduced, loopSrc, fullSrc]);
+  }, [mode, reduced, loopSrc, fullSrc, shouldLoad]);
 
   const src = mode === 'full' && fullSrc ? fullSrc : loopSrc;
 
   return (
     <figure className="fu-demo-video">
-      <div className="fu-demo-video-frame">
+      <div className="fu-demo-video-frame" ref={frameRef}>
         <video
           ref={videoRef}
           className="fu-demo-video-el"
-          src={src}
+          src={shouldLoad ? src : undefined}
           poster={poster}
           playsInline
           muted={mode === 'loop'}
           loop={mode === 'loop'}
-          autoPlay={mode === 'loop' && !reduced}
+          autoPlay={shouldLoad && mode === 'loop' && !reduced}
           controls={mode === 'full' || reduced}
-          preload="metadata"
+          preload={shouldLoad ? 'metadata' : 'none'}
           aria-label={title}
         />
       </div>
@@ -68,7 +86,14 @@ export default function ProductDemoVideo({
         {fullSrc ? (
           <div className="fu-demo-video-actions">
             {mode === 'loop' ? (
-              <button type="button" className="fu-demo-video-btn" onClick={() => setMode('full')}>
+              <button
+                type="button"
+                className="fu-demo-video-btn"
+                onClick={() => {
+                  setShouldLoad(true);
+                  setMode('full');
+                }}
+              >
                 Ver gravação completa
               </button>
             ) : (

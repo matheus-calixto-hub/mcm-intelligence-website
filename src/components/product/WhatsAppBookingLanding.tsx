@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
@@ -10,6 +9,7 @@ import { BOOKING_PLANS } from '@/config/whatsappBookingPricing';
 import BookingFlowPhone from '@/components/product/BookingFlowPhone';
 import ProductBrowse from '@/components/product/ProductBrowse';
 import ProductSectionNav from '@/components/product/ProductSectionNav';
+import { useWbReveal } from '@/hooks/useWbReveal';
 
 const FLOW_STRIP = [
   { src: '/products/booking-chat.jpg', label: 'Chat · Agendar' },
@@ -27,38 +27,8 @@ const NAV = [
   { href: '#comecar', label: 'Começar' },
 ] as const;
 
-function useReveal() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const root = ref.current;
-    if (!root) return;
-    const nodes = root.querySelectorAll('.wb-reveal');
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduced) {
-      nodes.forEach((n) => n.classList.add('is-in'));
-      return;
-    }
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-in');
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' },
-    );
-    nodes.forEach((n) => io.observe(n));
-    return () => io.disconnect();
-  }, []);
-
-  return ref;
-}
-
 export default function WhatsAppBookingLanding() {
-  const pageRef = useReveal();
+  const pageRef = useWbReveal();
   const wa = getWhatsAppUrl(WHATSAPP_MESSAGES.whatsappBooking);
 
   return (
