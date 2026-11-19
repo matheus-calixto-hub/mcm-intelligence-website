@@ -31,9 +31,14 @@ export function useScrollAnimation<T extends HTMLElement>() {
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduced || isSlowNetwork()) {
+      document.documentElement.classList.add('wb-motion-safe');
+      document.documentElement.classList.remove('wb-motion');
       revealAll();
       return;
     }
+
+    document.documentElement.classList.add('wb-motion');
+    document.documentElement.classList.remove('wb-motion-safe');
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -44,7 +49,7 @@ export function useScrollAnimation<T extends HTMLElement>() {
           }
         });
       },
-      { threshold: 0.01, rootMargin: '100px 0px 100px 0px' },
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
     );
 
     elements.forEach((el) => {
@@ -52,7 +57,11 @@ export function useScrollAnimation<T extends HTMLElement>() {
       observer.observe(el);
     });
 
-    const failsafe = window.setTimeout(revealAll, 900);
+    const failsafe = window.setTimeout(() => {
+      elements.forEach((el) => {
+        if (!el.classList.contains('is-visible')) el.classList.add('is-visible');
+      });
+    }, 3500);
 
     return () => {
       window.clearTimeout(failsafe);

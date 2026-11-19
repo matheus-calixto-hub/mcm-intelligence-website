@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Manrope } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { COMPANY } from "@/config/constants";
 import { getSiteUrl, OG_IMAGE, SITE } from "@/config/site";
@@ -107,6 +108,13 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${fraunces.variable} ${manrope.variable} antialiased`}>
+        <Script
+          id="wb-motion-boot"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var r=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var c=navigator.connection;var slow=c&&(c.saveData||/^(slow-2g|2g|3g)$/.test(c.effectiveType||''));if(!r&&!slow)document.documentElement.classList.add('wb-motion');else document.documentElement.classList.add('wb-motion-safe');}catch(e){}})();`,
+          }}
+        />
         <a href="#conteudo" className="skip-link">
           Ir para o conteúdo
         </a>

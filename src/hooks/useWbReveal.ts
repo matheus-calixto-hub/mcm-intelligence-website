@@ -14,10 +14,10 @@ function isSlowNetwork(): boolean {
 }
 
 /**
- * Reveal progressivo sem trancar o conteúdo:
- * - HTML já nasce visível (CSS)
- * - Em rede lenta / reduced-motion: marca tudo de uma vez
- * - Failsafe curto garante que nada fique “sumido”
+ * Reveal com animação visível no scroll.
+ * - Rede ok: esconde via html.wb-motion e anima ao entrar na tela
+ * - Rede lenta / reduced-motion: tudo visível, sem trancar
+ * - Failsafe longo só para não deixar nada preso
  */
 export function useWbReveal<T extends HTMLElement = HTMLDivElement>() {
   const ref = useRef<T>(null);
@@ -35,9 +35,14 @@ export function useWbReveal<T extends HTMLElement = HTMLDivElement>() {
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduced || isSlowNetwork()) {
+      document.documentElement.classList.add('wb-motion-safe');
+      document.documentElement.classList.remove('wb-motion');
       revealAll();
       return;
     }
+
+    document.documentElement.classList.add('wb-motion');
+    document.documentElement.classList.remove('wb-motion-safe');
 
     const io = new IntersectionObserver(
       (entries) => {
@@ -48,23 +53,21 @@ export function useWbReveal<T extends HTMLElement = HTMLDivElement>() {
           }
         });
       },
-      // Antecipa bastante: conteúdo “pronto” antes de entrar na tela
-      { threshold: 0.01, rootMargin: '120px 0px 120px 0px' },
+      // Dispara perto da viewport para a animação ser vista
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
     );
 
     nodes.forEach((n) => io.observe(n));
 
-    // Failsafe: se o IO atrasar (4G, tab em background), libera tudo
-    const failsafe = window.setTimeout(revealAll, 900);
-
-    const onVisible = () => {
-      if (document.visibilityState === 'visible') revealAll();
-    };
-    document.addEventListener('visibilitychange', onVisible);
+    // Só destrava o que ainda não entrou (evita “sumir” no 4G)
+    const failsafe = window.setTimeout(() => {
+      nodes.forEach((n) => {
+        if (!n.classList.contains('is-in')) n.classList.add('is-in');
+      });
+    }, 3500);
 
     return () => {
       window.clearTimeout(failsafe);
-      document.removeEventListener('visibilitychange', onVisible);
       io.disconnect();
     };
   }, []);
