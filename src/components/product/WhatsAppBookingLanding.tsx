@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
 import { BOOKING_PLANS } from '@/config/whatsappBookingPricing';
+import BookingFlowPhone from '@/components/product/BookingFlowPhone';
 
 const NAV = [
   { href: '#produto', label: 'Produto' },
@@ -150,21 +150,12 @@ export default function WhatsAppBookingLanding() {
             </div>
 
             <div className="wb-phone-stage wb-reveal wb-from-right wb-reveal-d1">
-              <div className="fu-hero-shot wb-glass-deep">
-                <Image
-                  src="/products/booking-agenda.jpg"
-                  alt="Agendamento e remarcação pelo WhatsApp"
-                  width={960}
-                  height={540}
-                  className="fu-hero-img"
-                  priority
-                />
-              </div>
+              <BookingFlowPhone />
               <div className="wb-float wb-float-a wb-glass">
-                <strong>Quinta, 26 nov · 10:00</strong>
-                <span>Confirmado</span>
+                <strong>Flow Meta</strong>
+                <span>Profissional → serviço → horário</span>
               </div>
-              <div className="wb-float wb-float-b wb-glass">Remarcado ✓</div>
+              <div className="wb-float wb-float-b wb-glass">Confirma no zap ✓</div>
             </div>
           </div>
         </section>

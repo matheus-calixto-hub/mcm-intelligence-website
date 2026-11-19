@@ -9,9 +9,10 @@ Acompanhar o que já está no ar / no código do site (`consultoria-mcm.com.br`)
 | Landing Agendamento | ✅ | `/product/whatsappbooking` |
 | Landing Follow-up | ✅ | `/product/followup` (+ bloco painel SLA) |
 | Landing Painel SLA | ✅ | `/product/sla-dashboard` — mock + print |
-| Imagens mock | ✅ | `/public/products/*.jpg` (inbox, agenda, sla-dashboard) |
+| Visual Agendamento | ✅ | `BookingFlowPhone` — simulação Flow Meta (não IA) |
+| Visual Follow-up | ✅ | `MensagensWaConversasMock` — Conversas Odoo |
+| Visual Painel SLA | ✅ | print + `SlaDashboardMock` |
 | SEO indexável nas landings | ✅ | sitemap atualizado |
-| Ilustração HTML do painel | ✅ | `SlaDashboardMock` com dados demo |
 
 ## Mensagens WhatsApp (site)
 

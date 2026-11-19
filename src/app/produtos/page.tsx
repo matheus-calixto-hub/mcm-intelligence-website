@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
+import ProductVisual from '@/components/product/ProductVisual';
 import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
 import { PRODUCTS } from '@/config/content';
 import { getSiteUrl, SITE } from '@/config/site';
@@ -68,15 +68,16 @@ export default function ProdutosPage() {
             <div className="products-grid">
               {PRODUCTS.map((product) => (
                 <article key={product.id} className="product-card">
-                  <div className="product-card-media">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      width={960}
-                      height={540}
-                      className="product-card-img"
-                    />
-                  </div>
+                  <ProductVisual
+                    visual={product.visual}
+                    image={product.image}
+                    name={product.name}
+                    className={
+                      product.visual === 'image'
+                        ? 'product-card-media'
+                        : 'product-card-media product-card-media-live'
+                    }
+                  />
                   <p className="product-eyebrow">{product.eyebrow}</p>
                   <h3>{product.name}</h3>
                   <p>{product.blurb}</p>

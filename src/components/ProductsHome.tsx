@@ -1,10 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
 import { PRODUCTS } from '@/config/content';
+import ProductVisual from '@/components/product/ProductVisual';
 
 export default function ProductsHome() {
   const sectionRef = useScrollAnimation<HTMLElement>();
@@ -28,16 +28,15 @@ export default function ProductsHome() {
               key={product.id}
               className={`product-home-card reveal ${index === 0 ? 'is-primary' : ''}`}
             >
-              <div className="product-home-media">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={960}
-                  height={540}
-                  className="product-card-img"
-                  priority={index === 0}
-                />
-              </div>
+              <ProductVisual
+                visual={product.visual}
+                image={product.image}
+                name={product.name}
+                priority={index === 0}
+                className={
+                  product.visual === 'image' ? 'product-home-media' : 'product-home-media-live'
+                }
+              />
               <div className="product-home-body">
                 <p className="product-eyebrow">{product.eyebrow}</p>
                 <h3>{product.name}</h3>

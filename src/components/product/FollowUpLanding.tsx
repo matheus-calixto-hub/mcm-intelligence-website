@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
+import MensagensWaConversasMock from '@/components/product/MensagensWaConversasMock';
 import ProductImpact from '@/components/product/ProductImpact';
 
 const NAV = [
@@ -145,21 +146,12 @@ export default function FollowUpLanding() {
             </div>
 
             <div className="wb-phone-stage wb-reveal wb-from-right wb-reveal-d1">
-              <div className="fu-hero-shot wb-glass-deep">
-                <Image
-                  src="/products/followup-inbox.jpg"
-                  alt="Inbox comercial com fila e conversa no WhatsApp"
-                  width={960}
-                  height={540}
-                  className="fu-hero-img"
-                  priority
-                />
-              </div>
+              <MensagensWaConversasMock />
               <div className="wb-float wb-float-a wb-glass">
                 <strong>SLA</strong>
-                <span>Aguardando resposta · 1h 20</span>
+                <span>Aguardando resposta · 2h 10</span>
               </div>
-              <div className="wb-float wb-float-b wb-glass">Fila limpa ✓</div>
+              <div className="wb-float wb-float-b wb-glass">Conversas · Mensagens WA</div>
             </div>
           </div>
         </section>
