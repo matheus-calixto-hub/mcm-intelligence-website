@@ -3467,7 +3467,7 @@ body:has(.wb)::before {
 /* Print comercial 16:9 fixo — não estica com a altura do monitor */
 .product-shot-fixed {
   width: 100%;
-  max-width: 560px;
+  max-width: min(560px, 100%);
   margin-inline: auto;
   aspect-ratio: 16 / 9;
   background: #0f172a;
@@ -3481,8 +3481,33 @@ body:has(.wb)::before {
 }
 
 .product-shot-fixed-lg {
-  max-width: 960px;
+  max-width: min(960px, 100%);
   margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .product-shot-fixed,
+  .product-shot-fixed-lg {
+    max-width: 100%;
+    border-radius: 0.75rem;
+  }
+
+  .wb-hero-grid {
+    gap: 1.5rem;
+  }
+
+  .product-section-nav-inner {
+    gap: 0.65rem;
+  }
+
+  .booking-flow-strip-grid {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(42%, 1fr);
+    grid-template-columns: none;
+    overflow-x: auto;
+    padding-bottom: 0.35rem;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 .fu .wb-phone-stage,

@@ -19,8 +19,8 @@ export const metadata: Metadata = buildPageMetadata({
   description,
   imagePath,
   imageAlt: 'Painel Visão geral com indicadores de SLA e Follow-up MCM',
-  imageWidth: 1280,
-  imageHeight: 720,
+  imageWidth: 1920,
+  imageHeight: 1080,
   keywords: [
     'painel SLA WhatsApp',
     'indicadores atendimento WhatsApp',

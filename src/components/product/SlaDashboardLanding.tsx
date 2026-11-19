@@ -94,9 +94,10 @@ export default function SlaDashboardLanding() {
                 <Image
                   src="/products/sla-dashboard.jpg"
                   alt="Painel Visão geral com KPIs de SLA e gráficos de Follow-up"
-                  width={1280}
-                  height={720}
+                  width={1920}
+                  height={1080}
                   className="fu-hero-img"
+                  sizes="(max-width: 960px) 100vw, 560px"
                   priority
                 />
               </div>
@@ -120,9 +121,10 @@ export default function SlaDashboardLanding() {
               <Image
                 src="/products/sla-dashboard.jpg"
                 alt="Visão ampliada do painel SLA Mensagens WA"
-                width={1280}
-                height={720}
+                width={1920}
+                height={1080}
                 className="fu-hero-img"
+                sizes="(max-width: 960px) 100vw, 960px"
               />
             </div>
 
