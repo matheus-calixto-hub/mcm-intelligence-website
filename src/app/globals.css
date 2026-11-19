@@ -3464,33 +3464,32 @@ body:has(.wb)::before {
   vertical-align: middle;
 }
 
+/* Print comercial 16:9 fixo — não estica com a altura do monitor */
+.product-shot-fixed {
+  width: 100%;
+  max-width: 560px;
+  margin-inline: auto;
+  aspect-ratio: 16 / 9;
+  background: #0f172a;
+}
+
+.product-shot-fixed .fu-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.product-shot-fixed-lg {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 .fu .wb-phone-stage,
 .sla .wb-phone-stage,
 .wb .wb-phone-stage {
   position: relative;
   min-height: 0;
-}
-
-.sla-hero-shot {
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-}
-
-.sla-hero-shot .sla-mock-frame {
-  margin: 0;
-  padding: 0.35rem;
-  background: rgba(255, 255, 255, 0.92);
-  border-radius: 1rem;
-  box-shadow: 0 22px 48px -24px rgba(0, 0, 0, 0.45);
-}
-
-.sla-mock-frame-lg {
-  padding: 0.85rem;
-  border-radius: 1.15rem;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(15, 30, 45, 0.08);
-  box-shadow: 0 18px 40px rgba(12, 27, 42, 0.08);
 }
 
 /* Prints reais do Flow no celular */

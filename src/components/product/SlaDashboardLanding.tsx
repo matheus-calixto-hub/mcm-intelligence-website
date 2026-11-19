@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import Footer from '@/components/Footer';
@@ -9,7 +10,6 @@ import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
 import ProductBrowse from '@/components/product/ProductBrowse';
 import ProductImpact from '@/components/product/ProductImpact';
 import ProductSectionNav from '@/components/product/ProductSectionNav';
-import SlaDashboardMock from '@/components/product/SlaDashboardMock';
 
 const NAV = [
   { href: '#produto', label: 'Produto' },
@@ -90,10 +90,15 @@ export default function SlaDashboardLanding() {
             </div>
 
             <div className="wb-phone-stage wb-reveal wb-from-right wb-reveal-d1">
-              <div className="fu-hero-shot sla-hero-shot">
-                <div className="sla-mock-frame">
-                  <SlaDashboardMock />
-                </div>
+              <div className="fu-hero-shot product-shot-fixed">
+                <Image
+                  src="/products/sla-dashboard.jpg"
+                  alt="Painel Visão geral com KPIs de SLA e gráficos de Follow-up"
+                  width={1280}
+                  height={720}
+                  className="fu-hero-img"
+                  priority
+                />
               </div>
             </div>
           </div>
@@ -111,8 +116,14 @@ export default function SlaDashboardLanding() {
               </p>
             </div>
 
-            <div className="sla-mock-frame sla-mock-frame-lg wb-reveal wb-reveal-d1">
-              <SlaDashboardMock />
+            <div className="fu-hero-shot product-shot-fixed product-shot-fixed-lg wb-reveal wb-reveal-d1">
+              <Image
+                src="/products/sla-dashboard.jpg"
+                alt="Visão ampliada do painel SLA Mensagens WA"
+                width={1280}
+                height={720}
+                className="fu-hero-img"
+              />
             </div>
 
             <div className="wb-steps" style={{ marginTop: '2rem' }}>

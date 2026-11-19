@@ -90,7 +90,7 @@ export default function FollowUpLanding() {
               </div>
 
               <div className="wb-phone-stage wb-reveal wb-from-right wb-reveal-d1">
-                <div className="fu-hero-shot">
+                <div className="fu-hero-shot product-shot-fixed">
                   <Image
                     src="/products/followup-inbox.jpg"
                     alt="Fila de atenção e chat no app Mensagens WA (Odoo)"
@@ -194,7 +194,7 @@ export default function FollowUpLanding() {
               </Link>
             </div>
             <aside className="wb-reveal wb-from-right wb-reveal-d1">
-              <div className="fu-hero-shot">
+              <div className="fu-hero-shot product-shot-fixed">
                 <Image
                   src="/products/followup-contato.jpg"
                   alt="Contato e Chatbox no app Mensagens WA"
