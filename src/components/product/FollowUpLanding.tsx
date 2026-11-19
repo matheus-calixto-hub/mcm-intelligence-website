@@ -8,15 +8,61 @@ import Navbar from '@/components/Navbar';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
 import ProductBrowse from '@/components/product/ProductBrowse';
+import ProductDemoVideo from '@/components/product/ProductDemoVideo';
 import ProductImpact from '@/components/product/ProductImpact';
+import ProductPhoneGallery from '@/components/product/ProductPhoneGallery';
 import ProductSectionNav from '@/components/product/ProductSectionNav';
 
 const NAV = [
   { href: '#produto', label: 'Produto' },
   { href: '#impacto', label: 'Ganhos' },
   { href: '#como-funciona', label: 'Como funciona' },
+  { href: '#na-pratica', label: 'Na prática' },
   { href: '#para-quem', label: 'Para quem' },
   { href: '#comecar', label: 'Começar' },
+] as const;
+
+const MOBILE_SLIDES = [
+  {
+    src: '/products/followup-mobile-fila.jpg',
+    label: 'Fila de atenção · SLA estourado',
+    alt: 'Fila de atenção no celular com e-mails em atraso',
+  },
+  {
+    src: '/products/followup-mobile-chat.jpg',
+    label: 'Chatbox WhatsApp com nome do atendente',
+    alt: 'Chat WhatsApp no mobile com Ana - JundMed',
+  },
+  {
+    src: '/products/followup-mobile-wa-preview.jpg',
+    label: 'Prévia do Follow-up WhatsApp',
+    alt: 'Simulação do template Follow-up no aparelho',
+  },
+  {
+    src: '/products/followup-mobile-email-preview.jpg',
+    label: 'Prévia do e-mail a enviar',
+    alt: 'Composer Enviar e-mail com template D+2',
+  },
+  {
+    src: '/products/followup-mobile-contato.jpg',
+    label: 'Contato · Chat, e-mail e novo Follow-up',
+    alt: 'Ações rápidas no cadastro do contato no mobile',
+  },
+  {
+    src: '/products/followup-mobile-triagem.jpg',
+    label: 'Triagem do lead',
+    alt: 'Aba Triagem com perguntas e respostas do contato',
+  },
+  {
+    src: '/products/followup-mobile-atividades.jpg',
+    label: 'Atividades e histórico',
+    alt: 'Atividade Responder WhatsApp e timeline no contato',
+  },
+  {
+    src: '/products/followup-mobile-sem-resposta.jpg',
+    label: 'Sem resposta · próximo toque',
+    alt: 'Kanban Sem resposta com Chat, E-mail e Follow-up',
+  },
 ] as const;
 
 function useReveal() {
@@ -92,11 +138,12 @@ export default function FollowUpLanding() {
               <div className="wb-phone-stage wb-reveal wb-from-right wb-reveal-d1">
                 <div className="fu-hero-shot product-shot-fixed">
                   <Image
-                    src="/products/followup-inbox.jpg"
-                    alt="Fila de atenção e chat no app Mensagens WA (Odoo)"
-                    width={1280}
-                    height={720}
+                    src="/products/followup-desktop-chat.jpg"
+                    alt="Contatos e Chatbox WhatsApp no Mensagens WA (desktop)"
+                    width={1600}
+                    height={1000}
                     className="fu-hero-img"
+                    sizes="(max-width: 960px) 100vw, 560px"
                     priority
                   />
                 </div>
@@ -168,42 +215,52 @@ export default function FollowUpLanding() {
           </div>
         </section>
 
-        <section className="section" aria-labelledby="fu-screen-title">
-          <div className="container wb-setup-grid">
-            <div className="wb-reveal wb-from-left">
-              <div className="section-head">
-                <h2 id="fu-screen-title">A tela real do Mensagens WA</h2>
-                <p>
-                  Contato, triagem, janela 24h, tempo sem resposta e Chatbox —
-                  tudo no Odoo, com a assinatura de quem atende.
+        <section className="section" id="na-pratica" aria-labelledby="fu-screen-title">
+          <div className="container">
+            <div className="section-head wb-reveal wb-from-left">
+              <h2 id="fu-screen-title">Na prática — telas reais do Mensagens WA</h2>
+              <p>
+                Desktop com chatbox aberto, mobile na fila, prévia de WhatsApp e
+                e-mail, triagem e atividades — o mesmo SAC que o time usa no dia a dia.
+              </p>
+            </div>
+
+            <div className="fu-practice-grid wb-reveal wb-reveal-d1">
+              <div className="fu-practice-desktop">
+                <div className="fu-hero-shot product-shot-fixed product-shot-fixed-lg">
+                  <Image
+                    src="/products/followup-desktop-chat.jpg"
+                    alt="Grade de contatos e Chatbox WhatsApp no desktop"
+                    width={1600}
+                    height={1000}
+                    className="fu-hero-img"
+                    sizes="(max-width: 960px) 100vw, 720px"
+                  />
+                </div>
+                <p className="fu-practice-cap">
+                  Desktop · Contatos + Chatbox com janela 24h e nome do atendente
                 </p>
               </div>
-              <ul className="wb-setup-list">
-                <li className="wb-glass">
-                  <strong>Fila de atenção</strong> — quem espera retorno agora.
-                </li>
-                <li className="wb-glass">
-                  <strong>Chat com nome</strong> — “Ana - JundMed” no WhatsApp.
-                </li>
-                <li className="wb-glass">
-                  <strong>Follow-up</strong> — próximo toque já agendado.
-                </li>
-              </ul>
-              <Link href="/product/sla-dashboard" className="btn btn-secondary" style={{ marginTop: '1rem' }}>
+              <div className="fu-practice-phone wb-reveal wb-from-right wb-reveal-d2">
+                <ProductPhoneGallery slides={MOBILE_SLIDES} />
+              </div>
+            </div>
+
+            <div className="fu-practice-video wb-reveal wb-reveal-d2">
+              <ProductDemoVideo
+                loopSrc="/products/followup-demo-loop.mp4"
+                fullSrc="/products/followup-demo.mp4"
+                poster="/products/followup-demo-poster.jpg"
+                title="Tour no celular"
+                caption="Cortes da demonstração: fila, contato, Follow-up WhatsApp, e-mail e painel."
+              />
+            </div>
+
+            <div className="fu-practice-links">
+              <Link href="/product/sla-dashboard" className="btn btn-secondary">
                 Ver também o painel SLA
               </Link>
             </div>
-            <aside className="wb-reveal wb-from-right wb-reveal-d1">
-              <div className="fu-hero-shot product-shot-fixed">
-                <Image
-                  src="/products/followup-contato.jpg"
-                  alt="Contato e Chatbox no app Mensagens WA"
-                  width={1280}
-                  height={720}
-                  className="fu-hero-img"
-                />
-              </div>
-            </aside>
           </div>
         </section>
 

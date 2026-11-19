@@ -11,16 +11,16 @@ const path = '/product/followup';
 const title = 'Follow-up comercial no WhatsApp e e-mail';
 const description =
   'Fila de atenção, SLA, cadências e chat com nome do atendente. Follow-up MCM para times que vendem no WhatsApp. Peça uma demonstração.';
-const imagePath = '/products/followup-inbox.jpg';
+const imagePath = '/products/followup-desktop-chat.jpg';
 
 export const metadata: Metadata = buildPageMetadata({
   path,
   title,
   description,
   imagePath,
-  imageAlt: 'Fila de atenção e chat no app Mensagens WA da MCM',
-  imageWidth: 1280,
-  imageHeight: 720,
+  imageAlt: 'Contatos e Chatbox WhatsApp no Mensagens WA da MCM',
+  imageWidth: 1600,
+  imageHeight: 1000,
   keywords: [
     'follow-up comercial WhatsApp',
     'fila de atendimento WhatsApp',

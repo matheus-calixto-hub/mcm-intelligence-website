@@ -9,14 +9,39 @@ import WhatsAppFloat from '@/components/WhatsAppFloat';
 import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
 import ProductBrowse from '@/components/product/ProductBrowse';
 import ProductImpact from '@/components/product/ProductImpact';
+import ProductPhoneGallery from '@/components/product/ProductPhoneGallery';
 import ProductSectionNav from '@/components/product/ProductSectionNav';
 
 const NAV = [
   { href: '#produto', label: 'Produto' },
   { href: '#impacto', label: 'Ganhos' },
   { href: '#indicadores', label: 'Indicadores' },
+  { href: '#no-celular', label: 'No celular' },
   { href: '#regras', label: 'Quem vê o quê' },
   { href: '#comecar', label: 'Começar' },
+] as const;
+
+const SLA_MOBILE_SLIDES = [
+  {
+    src: '/products/sla-mobile-header.jpg',
+    label: 'Visão geral · filtros e escopo do vendedor',
+    alt: 'Painel Visão geral no mobile com filtros e KPIs',
+  },
+  {
+    src: '/products/sla-mobile-kpis.jpg',
+    label: 'KPIs · 1ª resposta, SLA e fila',
+    alt: 'Cards de 1ª resposta WA/e-mail, % no SLA e fila',
+  },
+  {
+    src: '/products/sla-mobile-charts.jpg',
+    label: 'Gráficos · respostas e resultado do SLA',
+    alt: 'Barras de respostas no período e donut do SLA',
+  },
+  {
+    src: '/products/sla-mobile-followup.jpg',
+    label: 'Follow-up e atenção da operação',
+    alt: 'Bloco Follow-up e Atenção da operação no painel',
+  },
 ] as const;
 
 function useReveal() {
@@ -154,6 +179,34 @@ export default function SlaDashboardLanding() {
                 </p>
               </article>
             </div>
+          </div>
+        </section>
+
+        <section className="section" id="no-celular" aria-labelledby="sla-mobile-title">
+          <div className="container fu-practice-grid">
+            <div className="wb-reveal wb-from-left">
+              <div className="section-head">
+                <h2 id="sla-mobile-title">O mesmo painel no celular</h2>
+                <p>
+                  Sócio e vendedor acompanham KPIs, gráficos e Follow-up fora do
+                  escritório — com o escopo certo (equipe ou só a própria operação).
+                </p>
+              </div>
+              <ul className="wb-setup-list">
+                <li className="wb-glass">
+                  <strong>Filtros</strong> — período, conta e canal no bolso.
+                </li>
+                <li className="wb-glass">
+                  <strong>KPIs</strong> — 1ª resposta, % no SLA, fila e sem resposta.
+                </li>
+                <li className="wb-glass">
+                  <strong>Gráficos</strong> — volume por canal e resultado do SLA.
+                </li>
+              </ul>
+            </div>
+            <aside className="fu-practice-phone wb-reveal wb-from-right wb-reveal-d1">
+              <ProductPhoneGallery slides={SLA_MOBILE_SLIDES} />
+            </aside>
           </div>
         </section>
 

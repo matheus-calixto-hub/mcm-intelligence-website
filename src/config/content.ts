@@ -68,7 +68,7 @@ export const PRODUCTS = [
       'WhatsApp + e-mail da empresa',
       'Gestor enxerga o time',
     ],
-    image: '/products/followup-inbox.jpg',
+    image: '/products/followup-desktop-chat.jpg',
     visual: 'image',
     href: '/product/followup',
     cta: 'Conhecer o Follow-up',
