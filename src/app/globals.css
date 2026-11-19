@@ -4690,8 +4690,9 @@ body:has(.wb)::before {
 }
 
 .fu-practice-video {
-  margin-top: clamp(2rem, 5vw, 3rem);
-  max-width: 420px;
+  margin-top: clamp(1.5rem, 4vw, 2.25rem);
+  width: fit-content;
+  max-width: 100%;
   margin-inline: auto;
 }
 
@@ -4708,22 +4709,30 @@ body:has(.wb)::before {
 
 .fu-demo-video {
   margin: 0;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
 }
 
+/* Altura limitada à viewport — o vídeo inteiro fica visível sem cortar */
 .fu-demo-video-frame {
   overflow: hidden;
-  border-radius: 1.35rem;
+  border-radius: 1.1rem;
   background: #0b1220;
   border: 1px solid rgba(15, 30, 45, 0.12);
-  box-shadow: 0 22px 48px -24px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 16px 36px -20px rgba(0, 0, 0, 0.4);
+  height: min(52vh, 420px);
+  width: auto;
   aspect-ratio: 9 / 19.5;
+  max-width: min(200px, 58vw);
+  margin-inline: auto;
 }
 
 .fu-demo-video-el {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   background: #0b1220;
 }
 
@@ -4764,12 +4773,30 @@ body:has(.wb)::before {
   opacity: 0.85;
 }
 
+.fu-practice-phone .bk-phone,
+.fu-practice-phone .fu-phone-gallery {
+  width: min(220px, 62vw);
+}
+
 @media (max-width: 900px) {
   .fu-practice-grid {
     grid-template-columns: 1fr;
   }
 
-  .fu-practice-phone .bk-phone {
-    max-width: 280px;
+  .fu-practice-phone .bk-phone,
+  .fu-practice-phone .fu-phone-gallery {
+    width: min(200px, 58vw);
+  }
+
+  .fu-demo-video-frame {
+    height: min(48vh, 380px);
+    max-width: min(180px, 52vw);
+  }
+}
+
+@media (max-height: 720px) {
+  .fu-demo-video-frame {
+    height: min(44vh, 340px);
+    max-width: min(160px, 48vw);
   }
 }
