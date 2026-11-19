@@ -242,15 +242,15 @@ button {
 
 html.wb-motion .reveal:not(.is-visible) {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(14px);
 }
 
 html.wb-motion .reveal.is-visible {
   opacity: 1;
   transform: none;
   transition:
-    opacity 0.65s var(--ease),
-    transform 0.65s var(--ease);
+    opacity 0.5s var(--ease),
+    transform 0.5s var(--ease);
 }
 
 /* Entrada do hero (acima da dobra) — não depende do scroll */
@@ -296,9 +296,7 @@ html.wb-motion .wb-hero-enter-d1 {
   border-bottom-color: var(--line-soft);
 }
 
-.navbar.is-hidden {
-  transform: translateY(-100%);
-}
+/* Navbar permanece fixa — esconder no scroll causava “pulo” da página */
 
 .navbar-inner {
   display: flex;
@@ -1601,23 +1599,26 @@ body:has(.wb)::before {
 
 html.wb-motion .wb-reveal:not(.is-in) {
   opacity: 0;
-  transform: translate3d(0, 36px, 0);
+  transform: translate3d(0, 16px, 0);
+  /* Só opacity/transform — sem mudar layout (evita scroll jump) */
+  will-change: opacity, transform;
 }
 
 html.wb-motion .wb-reveal.wb-from-left:not(.is-in) {
-  transform: translate3d(-40px, 16px, 0);
+  transform: translate3d(-18px, 10px, 0);
 }
 
 html.wb-motion .wb-reveal.wb-from-right:not(.is-in) {
-  transform: translate3d(40px, 16px, 0);
+  transform: translate3d(18px, 10px, 0);
 }
 
 html.wb-motion .wb-reveal.is-in {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+  will-change: auto;
   transition:
-    opacity 0.6s var(--ease),
-    transform 0.6s var(--ease);
+    opacity 0.5s var(--ease),
+    transform 0.5s var(--ease);
 }
 
 html.wb-motion .wb-reveal-d1.is-in {
@@ -3611,9 +3612,15 @@ html.wb-motion-safe .reveal {
   overflow: hidden;
 }
 
+.bk-phone-screen-real {
+  aspect-ratio: 9 / 19.5;
+}
+
 .bk-phone-shot {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
   display: block;
 }
 

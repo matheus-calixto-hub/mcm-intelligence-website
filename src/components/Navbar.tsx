@@ -56,24 +56,24 @@ export default function Navbar() {
   const waHref = getWhatsAppUrl(getWhatsAppMessageForPath(pathname));
 
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+    const sync = () => {
+      setIsScrolled(window.scrollY > 40);
+      ticking = false;
+    };
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setIsScrolled(currentScrollY > 40);
-      // Em landings de produto o header fica fixo no topo (sem esconder).
-      setIsHidden(
-        !isProduct && currentScrollY > lastScrollY && currentScrollY > 120,
-      );
-      setLastScrollY(currentScrollY);
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(sync);
     };
 
+    sync();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY, isProduct]);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
@@ -87,7 +87,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`navbar ${isScrolled || isProduct ? 'is-scrolled' : ''} ${isHidden ? 'is-hidden' : ''}`}
+        className={`navbar ${isScrolled || isProduct ? 'is-scrolled' : ''}`}
         aria-label="Principal"
       >
         <div className="container navbar-inner">
