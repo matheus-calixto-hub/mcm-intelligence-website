@@ -1699,6 +1699,123 @@ body:has(.wb)::before {
   }
 }
 
+/* Landings de produto com Navbar + âncoras do site */
+.has-site-chrome {
+  padding-top: var(--nav-h);
+}
+
+.product-section-nav {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 90;
+  background: rgba(238, 241, 244, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line-soft, rgba(15, 30, 45, 0.08));
+}
+
+.product-section-nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 2.6rem;
+  overflow-x: auto;
+}
+
+.product-section-nav-label {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #0f766e;
+}
+
+.product-section-nav nav {
+  display: flex;
+  gap: 0.85rem;
+  white-space: nowrap;
+}
+
+.product-section-nav a {
+  font-size: 0.86rem;
+  color: var(--ink-soft, #5a6570);
+  text-decoration: none;
+}
+
+.product-section-nav a:hover {
+  color: var(--ink, #0f172a);
+}
+
+.product-browse {
+  background: rgba(255, 255, 255, 0.45);
+  border-top: 1px solid var(--line-soft, rgba(15, 30, 45, 0.08));
+}
+
+.product-browse-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.35rem;
+}
+
+.product-browse-head h2 {
+  margin: 0.2rem 0 0.4rem;
+}
+
+.product-browse-head p {
+  margin: 0;
+  max-width: 36rem;
+  color: var(--ink-soft, #5a6570);
+}
+
+.product-browse-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 720px) {
+  .product-browse-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-browse-card {
+  display: block;
+  padding: 1.15rem 1.2rem 1.25rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(15, 30, 45, 0.08);
+  background: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.product-browse-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px -28px rgba(12, 27, 42, 0.45);
+}
+
+.product-browse-card h3 {
+  margin: 0.15rem 0 0.45rem;
+  font-size: 1.15rem;
+}
+
+.product-browse-card > p {
+  margin: 0 0 0.85rem;
+  color: var(--ink-soft, #5a6570);
+  font-size: 0.92rem;
+}
+
+.product-browse-cta {
+  font-size: 0.88rem;
+  font-weight: 650;
+  color: #0f766e;
+}
+
 .wb-hero {
   position: relative;
   padding: 2.75rem 0 4.25rem;

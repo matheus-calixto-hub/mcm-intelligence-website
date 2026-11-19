@@ -25,6 +25,7 @@ export default function Footer() {
             <ul>
               <li><Link href="/produtos">Produtos</Link></li>
               <li><Link href="/product/followup">Follow-up</Link></li>
+              <li><Link href="/product/sla-dashboard">Painel SLA</Link></li>
               <li><Link href="/product/whatsappbooking">Agendamento</Link></li>
               <li><Link href="/sobre">Sobre</Link></li>
               <li><Link href="/#contato">Contato</Link></li>

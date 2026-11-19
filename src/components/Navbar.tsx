@@ -19,10 +19,20 @@ const SOBRE_LINKS = [
   { href: '/#contato', label: 'Contato' },
 ];
 
+const PRODUCT_LINKS = [
+  { href: '/', label: 'Início' },
+  { href: '/produtos', label: 'Produtos' },
+  { href: '/product/followup', label: 'Follow-up' },
+  { href: '/product/sla-dashboard', label: 'Painel SLA' },
+  { href: '/product/whatsappbooking', label: 'Agendamento' },
+  { href: '/#contato', label: 'Contato' },
+];
+
 export default function Navbar() {
   const pathname = usePathname();
   const isSobre = pathname?.startsWith('/sobre');
-  const links = isSobre ? SOBRE_LINKS : HOME_LINKS;
+  const isProduct = pathname?.startsWith('/product');
+  const links = isProduct ? PRODUCT_LINKS : isSobre ? SOBRE_LINKS : HOME_LINKS;
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
@@ -53,7 +63,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`navbar ${isScrolled ? 'is-scrolled' : ''} ${isHidden ? 'is-hidden' : ''}`}
+        className={`navbar ${isScrolled || isProduct ? 'is-scrolled' : ''} ${isHidden ? 'is-hidden' : ''}`}
         aria-label="Principal"
       >
         <div className="container navbar-inner">

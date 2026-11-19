@@ -1,17 +1,21 @@
 'use client';
 
-import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import WhatsAppFloat from '@/components/WhatsAppFloat';
 import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
 import { BOOKING_PLANS } from '@/config/whatsappBookingPricing';
 import BookingFlowPhone from '@/components/product/BookingFlowPhone';
+import ProductBrowse from '@/components/product/ProductBrowse';
+import ProductSectionNav from '@/components/product/ProductSectionNav';
 
 const NAV = [
   { href: '#produto', label: 'Produto' },
   { href: '#como-funciona', label: 'Como funciona' },
   { href: '#planos', label: 'Planos' },
   { href: '#comecar', label: 'Começar' },
-];
+] as const;
 
 function useReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -44,84 +48,19 @@ function useReveal() {
 }
 
 export default function WhatsAppBookingLanding() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const pageRef = useReveal();
   const wa = getWhatsAppUrl(WHATSAPP_MESSAGES.whatsappBooking);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [menuOpen]);
-
   return (
-    <div className="wb" ref={pageRef}>
+    <div className="wb has-site-chrome" ref={pageRef}>
+      <Navbar />
+      <ProductSectionNav items={NAV} productLabel="Agendamento" />
       <div className="wb-ambient" aria-hidden="true">
         <span className="wb-blob wb-blob-a" />
         <span className="wb-blob wb-blob-b" />
         <span className="wb-blob wb-blob-c" />
         <span className="wb-blob wb-blob-d" />
       </div>
-
-      <header className={`wb-nav ${scrolled ? 'is-scrolled' : ''}`}>
-        <div className="container wb-nav-inner">
-          <Link href="/product/whatsappbooking" className="wb-logo" onClick={() => setMenuOpen(false)}>
-            MCM <span>Booking</span>
-          </Link>
-          <nav className="wb-nav-links" aria-label="Produto">
-            {NAV.map((item) => (
-              <a key={item.href} href={item.href}>
-                {item.label}
-              </a>
-            ))}
-          </nav>
-          <div className="wb-nav-actions">
-            <a href={wa} className="btn wb-btn-glass" target="_blank" rel="noopener noreferrer">
-              Falar no WhatsApp
-            </a>
-            <button
-              type="button"
-              className="wb-menu-btn"
-              aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
-              aria-expanded={menuOpen}
-              onClick={() => setMenuOpen((v) => !v)}
-            >
-              <span />
-              <span />
-            </button>
-          </div>
-        </div>
-        {menuOpen && (
-          <div className="wb-drawer">
-            {NAV.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setMenuOpen(false)}
-              >
-                {item.label}
-              </a>
-            ))}
-            <a
-              href={wa}
-              className="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMenuOpen(false)}
-            >
-              Falar no WhatsApp
-            </a>
-          </div>
-        )}
-      </header>
 
       <main>
         <section className="wb-hero" id="produto" aria-label="WhatsApp Booking">
@@ -344,18 +283,9 @@ export default function WhatsAppBookingLanding() {
         </section>
       </main>
 
-      <footer className="wb-foot">
-        <div className="container wb-foot-inner">
-          <p>
-            <Link href="/produtos">← Todos os produtos</Link>
-            {' · '}
-            <Link href="/">MCM Consultoria</Link>
-          </p>
-          <p>
-            © {new Date().getFullYear()} {COMPANY.legalName}
-          </p>
-        </div>
-      </footer>
+      <ProductBrowse currentId="booking" />
+      <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }

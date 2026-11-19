@@ -2,9 +2,14 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import WhatsAppFloat from '@/components/WhatsAppFloat';
 import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
+import ProductBrowse from '@/components/product/ProductBrowse';
 import ProductImpact from '@/components/product/ProductImpact';
+import ProductSectionNav from '@/components/product/ProductSectionNav';
 import SlaDashboardMock from '@/components/product/SlaDashboardMock';
 
 const NAV = [
@@ -13,7 +18,7 @@ const NAV = [
   { href: '#indicadores', label: 'Indicadores' },
   { href: '#regras', label: 'Quem vê o quê' },
   { href: '#comecar', label: 'Começar' },
-];
+] as const;
 
 function useReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -44,80 +49,19 @@ function useReveal() {
 }
 
 export default function SlaDashboardLanding() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const pageRef = useReveal();
   const waDemo = getWhatsAppUrl(WHATSAPP_MESSAGES.slaDashboard);
   const waQuote = getWhatsAppUrl(WHATSAPP_MESSAGES.customQuote);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [menuOpen]);
-
   return (
-    <div className="wb fu sla" ref={pageRef}>
+    <div className="wb fu sla has-site-chrome" ref={pageRef}>
+      <Navbar />
+      <ProductSectionNav items={NAV} productLabel="Painel SLA" />
       <div className="wb-ambient" aria-hidden="true">
         <span className="wb-blob wb-blob-a" />
         <span className="wb-blob wb-blob-b" />
         <span className="wb-blob wb-blob-c" />
       </div>
-
-      <header className={`wb-nav ${scrolled ? 'is-scrolled' : ''}`}>
-        <div className="container wb-nav-inner">
-          <Link href="/product/sla-dashboard" className="wb-logo" onClick={() => setMenuOpen(false)}>
-            MCM <span>Visão geral</span>
-          </Link>
-          <nav className="wb-nav-links" aria-label="Produto">
-            {NAV.map((item) => (
-              <a key={item.href} href={item.href}>
-                {item.label}
-              </a>
-            ))}
-          </nav>
-          <div className="wb-nav-actions">
-            <a href={waDemo} className="btn wb-btn-glass" target="_blank" rel="noopener noreferrer">
-              Pedir demonstração
-            </a>
-            <button
-              type="button"
-              className="wb-menu-btn"
-              aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
-              aria-expanded={menuOpen}
-              onClick={() => setMenuOpen((v) => !v)}
-            >
-              <span />
-              <span />
-            </button>
-          </div>
-        </div>
-        {menuOpen && (
-          <div className="wb-drawer">
-            {NAV.map((item) => (
-              <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
-                {item.label}
-              </a>
-            ))}
-            <a
-              href={waDemo}
-              className="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMenuOpen(false)}
-            >
-              Pedir demonstração
-            </a>
-          </div>
-        )}
-      </header>
 
       <main>
         <section className="wb-hero" id="produto" aria-label="Painel SLA e Follow-up">
@@ -299,20 +243,9 @@ export default function SlaDashboardLanding() {
         </section>
       </main>
 
-      <footer className="wb-foot">
-        <div className="container wb-foot-inner">
-          <p>
-            <Link href="/produtos">← Todos os produtos</Link>
-            {' · '}
-            <Link href="/product/followup">Follow-up</Link>
-            {' · '}
-            <Link href="/">MCM Consultoria</Link>
-          </p>
-          <p>
-            © {new Date().getFullYear()} {COMPANY.legalName}
-          </p>
-        </div>
-      </footer>
+      <ProductBrowse currentId="sla" />
+      <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }
