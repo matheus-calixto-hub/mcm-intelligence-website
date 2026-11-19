@@ -2,15 +2,14 @@
 
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
 import { BOOKING_PLANS } from '@/config/whatsappBookingPricing';
-import BookingQuoteBuilder from '@/components/product/BookingQuoteBuilder';
 
 const NAV = [
   { href: '#produto', label: 'Produto' },
   { href: '#como-funciona', label: 'Como funciona' },
   { href: '#planos', label: 'Planos' },
-  { href: '#orcamento', label: 'Orçamento' },
   { href: '#comecar', label: 'Começar' },
 ];
 
@@ -137,48 +136,35 @@ export default function WhatsAppBookingLanding() {
                 disponibilidade, dia e semana pelo próprio zap — sem app extra.
               </p>
               <div className="wb-hero-cta">
-                <a href="#orcamento" className="btn btn-on-dark wb-btn-lift">
-                  Montar meu orçamento
+                <a href={wa} className="btn btn-on-dark wb-btn-lift" target="_blank" rel="noopener noreferrer">
+                  Quero demonstração no WhatsApp
                 </a>
                 <a href="#como-funciona" className="btn btn-ghost-on-dark">
                   Ver como funciona
                 </a>
               </div>
               <p className="wb-hero-note">
-                CNPJ ou CPF, número próprio ou nosso, Meta pronta ou com suporte —
-                o valor aparece na hora.
+                Mostramos ao vivo o cliente marcando e o gestor na agenda —
+                sem compromisso na primeira conversa.
               </p>
             </div>
 
-            <div className="wb-phone-stage wb-reveal wb-from-right wb-reveal-d1" aria-hidden="true">
+            <div className="wb-phone-stage wb-reveal wb-from-right wb-reveal-d1">
+              <div className="fu-hero-shot wb-glass-deep">
+                <Image
+                  src="/products/booking-agenda.jpg"
+                  alt="Agendamento e remarcação pelo WhatsApp"
+                  width={960}
+                  height={540}
+                  className="fu-hero-img"
+                  priority
+                />
+              </div>
               <div className="wb-float wb-float-a wb-glass">
                 <strong>Quinta, 26 nov · 10:00</strong>
-                <span>Barba e Sobrancelha</span>
+                <span>Confirmado</span>
               </div>
-              <div className="wb-float wb-float-b wb-glass">
-                Remarcado ✓
-              </div>
-              <div className="wb-phone wb-glass-deep">
-                <div className="wb-phone-notch" />
-                <div className="wb-phone-screen">
-                  <div className="wb-chat-head">Agendamento</div>
-                  <div className="wb-bubble in">
-                    Sábado, 21 de novembro às 12:00
-                    <br />
-                    Profissional: João
-                    <br />
-                    Serviços: Barba
-                  </div>
-                  <div className="wb-bubble in muted">
-                    Toque para ver, remarcar ou cancelar.
-                  </div>
-                  <div className="wb-cta-chip">Ver agendamento</div>
-                  <div className="wb-bubble out">Remarcar</div>
-                  <div className="wb-bubble in">
-                    Escolha o profissional, o serviço e o novo horário — tudo aqui.
-                  </div>
-                </div>
-              </div>
+              <div className="wb-float wb-float-b wb-glass">Remarcado ✓</div>
             </div>
           </div>
         </section>
@@ -244,8 +230,8 @@ export default function WhatsAppBookingLanding() {
             <div className="section-head wb-reveal wb-from-left">
               <h2 id="wb-plans-title">Qual o tamanho do seu time?</h2>
               <p>
-                Escolhe o plano pelo número de profissionais. O valor exato
-                depende de CNPJ/CPF, Meta e número — monta no orçamento abaixo.
+                Escolha o porte. No WhatsApp alinhamos número, verificação e o
+                valor certo para o seu caso — com demonstração se quiser.
               </p>
             </div>
             <div className="wb-plan-grid">
@@ -266,28 +252,12 @@ export default function WhatsAppBookingLanding() {
                       <li key={p}>{p}</li>
                     ))}
                   </ul>
-                  <a href="#orcamento" className="wb-plan-price">
-                    Montar orçamento · {plan.name}
+                  <a href={wa} className="wb-plan-price" target="_blank" rel="noopener noreferrer">
+                    Conversar sobre {plan.name}
                   </a>
                 </article>
               );
               })}
-            </div>
-          </div>
-        </section>
-
-        <section className="section wb-quote-section" id="orcamento" aria-labelledby="wb-quote-title">
-          <div className="container">
-            <div className="section-head wb-reveal wb-from-left">
-              <h2 id="wb-quote-title">Monte o orçamento do seu jeito</h2>
-              <p>
-                CNPJ ou CPF, número próprio ou provisionado, Meta pronta ou com
-                suporte — o valor atualiza na hora. No final, leva tudo pronto pro
-                WhatsApp.
-              </p>
-            </div>
-            <div className="wb-reveal">
-              <BookingQuoteBuilder />
             </div>
           </div>
         </section>
@@ -324,8 +294,8 @@ export default function WhatsAppBookingLanding() {
                 disponibilidade, vê a semana e ajusta serviços pelo WhatsApp —
                 diferencial que a maioria dos sistemas deixa só no painel web.
               </p>
-              <a href="#orcamento" className="btn btn-primary wb-btn-lift">
-                Ver meu valor
+              <a href={wa} className="btn btn-primary wb-btn-lift" target="_blank" rel="noopener noreferrer">
+                Falar no WhatsApp
               </a>
             </aside>
           </div>
@@ -345,12 +315,12 @@ export default function WhatsAppBookingLanding() {
                   <p className="wb-cta-eyebrow">No zap, em minutos</p>
                   <h2 id="wb-cta-title">Manda um oi. A gente mostra ao vivo.</h2>
                   <p>
-                    Já montou o orçamento? Manda no zap que a gente mostra o
-                    cliente marcando e o gestor mexendo na agenda ao vivo.
+                    Demonstração rápida: cliente marcando e gestor na agenda.
+                    Se fizer sentido, alinhamos escopo e valor na mesma conversa.
                   </p>
                   <div className="wb-cta-actions">
-                    <a href="#orcamento" className="btn wb-cta-btn wb-btn-lift">
-                      Ir para o orçamento
+                    <a href={wa} className="btn wb-cta-btn wb-btn-lift" target="_blank" rel="noopener noreferrer">
+                      Quero demonstração
                     </a>
                     <div className="wb-cta-pills">
                       <span className="wb-cta-pill wb-glass">{COMPANY.whatsappFormatted}</span>
@@ -386,7 +356,9 @@ export default function WhatsAppBookingLanding() {
       <footer className="wb-foot">
         <div className="container wb-foot-inner">
           <p>
-            <Link href="/">← Voltar à MCM Consultoria</Link>
+            <Link href="/produtos">← Todos os produtos</Link>
+            {' · '}
+            <Link href="/">MCM Consultoria</Link>
           </p>
           <p>
             © {new Date().getFullYear()} {COMPANY.legalName}

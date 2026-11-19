@@ -19,16 +19,21 @@ export const COMPANY = {
  * Mensagens pré-formatadas para WhatsApp
  */
 export const WHATSAPP_MESSAGES = {
-  demo: 'Olá, Matheus! Quero conhecer os agentes de IA da MCM e ver como encaixa no meu negócio.',
-  agents: 'Olá! Tenho interesse em agentes de IA no WhatsApp (atendimento, templates agendados e/ou disparo em massa). Quero entender escopo e custos da Meta.',
+  demo: 'Olá! Quero uma demonstração rápida dos produtos da MCM e ver o que encaixa no meu negócio.',
+  agents:
+    'Olá! Quero melhorar o atendimento no WhatsApp (time respondendo como a marca, com organização e prazos). Podemos conversar?',
   sites:
-    'Olá! Quero um site personalizado para a minha empresa (domínio próprio, SEO, CTAs e conversão para WhatsApp), com opção de assistente de IA e evolução para vendas/NFS quando fizer sentido.',
-  consulting: 'Olá! Gostaria de conversar sobre consultoria / arquitetura de solução para a minha empresa.',
-  odoo: 'Olá! Preciso de apoio com Odoo (implantação, customização ou integração).',
-  integrations: 'Olá! Quero falar sobre Integrações entre sistemas / APIs / legado.',
-  customQuote: 'Olá! Gostaria de um orçamento personalizado para a minha operação.',
+    'Olá! Quero um site profissional para a minha empresa, com bom SEO e botão direto para WhatsApp.',
+  consulting: 'Olá! Gostaria de conversar sobre como organizar a operação da minha empresa com vocês.',
+  odoo: 'Olá! Preciso de apoio para implantar ou melhorar o sistema de gestão da empresa.',
+  integrations: 'Olá! Quero integrar sistemas e automatizar processos da operação.',
+  customQuote: 'Olá! Quero solicitar um orçamento personalizado para a minha operação.',
   whatsappBooking:
-    'Olá! Quero conhecer o MCM WhatsApp Booking (agendar, remarcar e cancelar no WhatsApp). Podem me contar planos e como configurar o número?',
+    'Olá! Quero conhecer o agendamento pelo WhatsApp (cliente marca e remarca sozinho). Podem me mostrar uma demonstração?',
+  followup:
+    'Olá! Quero conhecer o Follow-up comercial no WhatsApp e e-mail (fila, prazos e cadências). Quero uma demonstração e entender como começar.',
+  products:
+    'Olá! Vi os produtos no site da MCM e quero ajuda para escolher o que faz sentido para o meu negócio.',
 } as const;
 
 /**

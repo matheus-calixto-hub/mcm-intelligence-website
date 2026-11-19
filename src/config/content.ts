@@ -2,77 +2,91 @@
  * Conteúdo editorial do site — portfolio + ofertas
  */
 
+/** Cards da home — linguagem natural de venda. */
 export const SOLUTIONS = [
   {
-    id: 'agentes',
-    title: 'Agentes de IA no WhatsApp',
-    lead: 'Atendimento, qualificação e operação sem depender de chat interno do ERP.',
+    id: 'followup',
+    title: 'Follow-up que não deixa lead esfriar',
+    lead: 'Seu time sabe o que responder agora — e o próximo toque já está no calendário.',
     points: [
-      'WhatsApp Business (Meta oficial) ou Evolution',
-      'Chatbox / inbox para o time da empresa atender como a marca',
-      'Governança: IA responde sozinha ou escala para humano — por cliente e por fluxo',
-      'Templates oficiais Meta: agendamento individual ou em massa a partir do CRM',
-      'Estimativa de custo do agendamento para N destinatários (tarifa Meta × mercado/DDI)',
-      'Orientação de limites da Meta, opt-in/LGPD e registro no sistema — com ou sem Odoo',
+      'Fila do que está atrasado',
+      'WhatsApp e e-mail da empresa juntos',
+      'Qualquer vendedor assume a conversa',
+      'Gestor vê o ritmo de resposta',
     ],
+    href: '/product/followup',
+  },
+  {
+    id: 'booking',
+    title: 'Agenda no WhatsApp, sem te interromper',
+    lead: 'Enquanto você atende, o cliente marca e remarca sozinho no zap.',
+    points: [
+      'Sem app novo',
+      'Remarcação em poucos toques',
+      'Gestor libera o dia pelo próprio WhatsApp',
+      'Menos cadeira vazia',
+    ],
+    href: '/product/whatsappbooking',
   },
   {
     id: 'sites',
-    title: 'Sites personalizados com conversão',
-    lead:
-      'Site da sua marca, no seu domínio — feito para ranquear, converter e levar o visitante ao WhatsApp (com ou sem assistente de IA).',
+    title: 'Site bonito que manda gente pro zap',
+    lead: 'Sua marca no Google e no LinkedIn — com caminho óbvio até a conversa.',
     points: [
-      'Site sob medida (como o da Consultoria MCM): identidade, SEO técnico e preview social (WhatsApp, LinkedIn, Meta)',
-      'Domínio próprio, hospedagem e SSL — URL profissional da empresa',
-      'CTAs de conversão: botão flutuante, faixas de ação, copy que reduz atrito até o WhatsApp',
-      'Pronto para Meta Business e campanhas Google Ads / AdSense — landing e tracking alinhados ao funil',
-      'WhatsApp Business (Meta): assistente de IA no atendimento, com opção de desligar e continuar só com humano',
-      'Evolução sob demanda: do site + atendimento para vendas, pedidos, NFS-e / notas de serviço e operação no ERP',
+      'Visual profissional da sua empresa',
+      'Botão e CTAs para WhatsApp',
+      'Pronto para anúncio',
+      'Dá para evoluir depois',
     ],
+    href: '/#contato',
   },
   {
-    id: 'integracoes',
-    title: 'Integrações e microsserviços',
-    lead: 'Conectamos ERP, legado, APIs e bancos com arquitetura que aguenta produção.',
+    id: 'operacao',
+    title: 'Quando precisar ir além do atendimento',
+    lead: 'Organizamos vendas, rotinas e o que trava o crescimento — no seu ritmo.',
     points: [
-      'FastAPI, filas, sync bidirecional',
-      'VPN/OpenVPN quando o legado exige rede fechada',
-      'Docker, observabilidade e deploy previsível',
-      'CNAB, marketplaces, Data Lake, HubSpot e afins',
+      'Começa pelo que dói hoje',
+      'Liga o que você já usa',
+      'Tira trabalho repetitivo do time',
+      'Acompanhamento de perto',
     ],
+    href: '/#contato',
+  },
+] as const;
+
+/** Hub /produtos — escolha guiada. */
+export const PRODUCTS = [
+  {
+    id: 'followup',
+    name: 'Follow-up comercial',
+    eyebrow: 'Vendas e relacionamento',
+    blurb:
+      'Para times que vendem no zap: fila, prazos, follow-up e conversa com cara de gente.',
+    points: [
+      'Ninguém perde o lead no celular pessoal',
+      'Follow-up sai no horário',
+      'WhatsApp + e-mail da empresa',
+      'Gestor enxerga o time',
+    ],
+    image: '/products/followup-inbox.jpg',
+    href: '/product/followup',
+    cta: 'Conhecer o Follow-up',
   },
   {
-    id: 'odoo',
-    title: 'Odoo Enterprise & Community',
-    lead: 'Arquitetura, customização, fiscal BR e sustentação — hands-on de ponta a ponta.',
+    id: 'booking',
+    name: 'Agendamento no WhatsApp',
+    eyebrow: 'Serviços e agenda',
+    blurb:
+      'Para quem vive de horário marcado: o cliente agenda sozinho e você continua atendendo.',
     points: [
-      'Implantação, migração e upgrade',
-      'Módulos sob medida e localização fiscal',
-      'NF-e (produto) e NFS-e (serviço), estoque, CRM, helpdesk, clínico',
-      'Squads e consultoria para consultorias e clientes finais',
+      'Marca e remarca sem te ligar',
+      'Gestor no próprio WhatsApp',
+      'Confirmação no chat',
+      'Salão, clínica, estúdio, serviços',
     ],
-  },
-  {
-    id: 'infra',
-    title: 'Cloud, VPS e hospedagem',
-    lead: 'Subimos e operamos a infraestrutura onde a solução roda — sem você ficar na mão.',
-    points: [
-      'AWS e outros clouds (EC2, redes, segurança básica)',
-      'VPS, servidores dedicados e hospedagem de aplicações',
-      'Docker, reverse proxy, TLS e ambientes de homolog/produção',
-      'Monitoramento, backup e handoff operacional',
-    ],
-  },
-  {
-    id: 'automacao',
-    title: 'Automação de processos',
-    lead: 'n8n, MCP e orquestrações que tiram trabalho repetitivo do time.',
-    points: [
-      'Fluxos com LLMs (OpenAI, Gemini e similares)',
-      'Extração e escrita controlada no ERP',
-      'Automação jurídica, omnichannel e back-office',
-      'Governança: o agente só faz o que você autoriza',
-    ],
+    image: '/products/booking-agenda.jpg',
+    href: '/product/whatsappbooking',
+    cta: 'Conhecer o Agendamento',
   },
 ] as const;
 

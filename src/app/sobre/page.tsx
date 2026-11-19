@@ -9,16 +9,16 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { getSiteUrl, SITE } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Sobre — experiência e stack",
+  title: "Sobre — quem somos",
   description:
-    "Track record da MCM: experiência em Odoo, agentes de IA no WhatsApp, Integrações, cloud e clientes atendidos. São Paulo, Brasil.",
+    "A MCM ajuda empresas a organizar atendimento, follow-up e agenda no WhatsApp — com sites que convertem. São Paulo, Brasil.",
   alternates: {
     canonical: "/sobre",
   },
   openGraph: {
     title: `Sobre | ${SITE.name}`,
     description:
-      "Experiência hands-on em Odoo, agentes de IA, Integrações e cloud — o portfolio por trás da MCM.",
+      "Quem está por trás da MCM: experiência prática em operação, WhatsApp comercial e sites que vendem.",
     url: `${getSiteUrl()}/sobre`,
   },
 };

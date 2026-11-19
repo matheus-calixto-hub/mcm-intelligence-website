@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
 
@@ -11,36 +12,31 @@ export default function Contact() {
       <div className="container">
         <div className="contact-panel reveal">
           <div>
-            <span className="eyebrow">Próximo passo</span>
-            <h2>Fale no WhatsApp e saia com clareza — não com um PDF genérico.</h2>
+            <span className="eyebrow">Vamos conversar</span>
+            <h2>Um oi no WhatsApp já abre a porta.</h2>
             <p>
-              Conta o processo (vendas, suporte, fiscal, integração). Em retorno
-              alinhamos o desenho, o que a IA pode responder, o que fica com o
-              time no chatbox e uma estimativa honesta de esforço e custo Meta.
+              Conta o que está doendo hoje: lead que some, agenda bagunçada ou
+              site que não gera conversa. A gente responde com caminho claro —
+              e, se fizer sentido, fecha o próximo passo.
             </p>
             <ul className="contact-bullets">
-              <li>Sem compromisso para o primeiro diagnóstico</li>
-              <li>Escopo, prazo e preço antes de começar</li>
-              <li>Site, agente WhatsApp, Odoo ou Integrações — você escolhe o ponto de partida</li>
-              <li>Entrega hands-on — não só slide</li>
+              <li>Primeira conversa sem compromisso</li>
+              <li>Você sai sabendo o que comprar (ou se ainda não é a hora)</li>
+              <li>Demonstração rápida quando valer a pena</li>
+              <li>Valor e prazo combinados antes de começar</li>
             </ul>
             <div className="contact-actions">
               <a
-                href={getWhatsAppUrl(WHATSAPP_MESSAGES.customQuote)}
+                href={getWhatsAppUrl(WHATSAPP_MESSAGES.demo)}
                 className="btn btn-whatsapp"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Conversar no WhatsApp agora
+                Chamar no WhatsApp
               </a>
-              <a
-                href={getWhatsAppUrl(WHATSAPP_MESSAGES.sites)}
-                className="btn btn-ghost"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Orçar site + WhatsApp
-              </a>
+              <Link href="/produtos" className="btn btn-ghost">
+                Ver produtos
+              </Link>
             </div>
           </div>
 
@@ -58,12 +54,8 @@ export default function Contact() {
               </dd>
             </div>
             <div>
-              <dt>Base</dt>
+              <dt>Onde estamos</dt>
               <dd>{COMPANY.location}</dd>
-            </div>
-            <div>
-              <dt>Empresa</dt>
-              <dd>{COMPANY.name}</dd>
             </div>
           </dl>
         </div>

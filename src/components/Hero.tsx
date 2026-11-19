@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
 
 export default function Hero() {
@@ -11,11 +12,11 @@ export default function Hero() {
           MCM<em>.</em>
         </p>
         <div className="hero-copy">
-          <h1>Agentes de IA e soluções de negócio — do WhatsApp ao ERP.</h1>
+          <h1>Seu cliente já está no WhatsApp. Sua operação também deveria.</h1>
           <p>
-            Arquitetura hands-on para quem precisa de resultado: agentes no
-            WhatsApp com chatbox e governança, sites que convertem, Integrações
-            críticas e Odoo — sem amarrar o seu processo a um único sistema.
+            Organizamos o atendimento e o follow-up do time, fazemos o cliente
+            agendar sozinho e deixamos o site pronto para converter. Você fala
+            conosco no zap e vê se encaixa — sem enrolação.
           </p>
           <div className="hero-cta">
             <a
@@ -24,14 +25,14 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Conversar no WhatsApp
+              Quero fechar negócio · WhatsApp
             </a>
-            <a href="#solucoes" className="btn btn-ghost-on-dark">
-              O que entregamos?
-            </a>
+            <Link href="/produtos" className="btn btn-ghost-on-dark">
+              Ver o que oferecemos
+            </Link>
           </div>
           <p className="hero-trust">
-            Diagnóstico rápido · escopo e custo claros · São Paulo · Brasil
+            Demonstração rápida · resposta humana · São Paulo
           </p>
         </div>
       </div>

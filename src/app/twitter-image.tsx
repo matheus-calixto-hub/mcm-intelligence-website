@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'MCM Consultoria — Agentes de IA, Integrações e Odoo';
+export const alt = 'MCM Consultoria — Atendimento no WhatsApp que vende';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -31,7 +31,7 @@ export default function TwitterImage() {
             fontWeight: 600,
           }}
         >
-          Consultoria em TI
+          Consultoria MCM
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
@@ -56,7 +56,7 @@ export default function TwitterImage() {
               fontFamily: 'sans-serif',
             }}
           >
-            Agentes de IA no WhatsApp, Integrações e Odoo — soluções de negócio hands-on.
+            Seu cliente já está no WhatsApp. Sua operação também deveria.
           </div>
         </div>
 
@@ -71,7 +71,7 @@ export default function TwitterImage() {
           }}
         >
           <span>São Paulo · Brasil</span>
-          <span>WhatsApp · Cloud · ERP</span>
+          <span>Follow-up · Agenda · Sites</span>
         </div>
       </div>
     ),

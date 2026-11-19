@@ -32,66 +32,43 @@ export default function JsonLd() {
     founder: {
       '@type': 'Person',
       name: 'Matheus Muniz',
-      jobTitle: 'CTO / Odoo Solution Architect',
+      jobTitle: 'Consultor de operação e atendimento',
       email: COMPANY.email,
     },
     knowsAbout: [
-      'Agentes de Inteligência Artificial',
-      'WhatsApp Business API',
-      'Sites personalizados e SEO',
-      'Conversão e CTAs para WhatsApp',
-      'Odoo ERP',
-      'Integrações de sistemas',
-      'n8n',
-      'Python',
-      'FastAPI',
-      'AWS',
-      'VPS e hospedagem',
+      'Atendimento comercial no WhatsApp',
+      'Follow-up de vendas',
+      'Agendamento pelo WhatsApp',
+      'Sites que convertem',
+      'Organização de times comerciais',
+      'Automação de relacionamento',
     ],
     makesOffer: [
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Agentes de IA no WhatsApp',
+          name: 'Follow-up comercial no WhatsApp',
           description:
-            'Atendimento inteligente, chatbox humano, templates Meta agendados (individual ou em massa), estimativa de custo por destinatário e integração com ERP/CRM.',
+            'Fila, prazos e cadências para o time atender e acompanhar leads no WhatsApp e no e-mail da empresa.',
         },
       },
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Sites personalizados com conversão',
+          name: 'Agendamento pelo WhatsApp',
           description:
-            'Site no domínio da empresa, SEO, preview social, CTAs para WhatsApp, Meta Business e Google Ads, com assistente de IA opcional e evolução para vendas e NFS-e.',
+            'Cliente marca, remarca e cancela no WhatsApp; gestor libera horários sem painel complicado.',
         },
       },
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Consultoria e customização Odoo',
+          name: 'Sites que convertem',
           description:
-            'Implantação, migração, módulos sob medida, fiscal BR (NF-e e NFS-e) e sustentação.',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Integrações e microsserviços',
-          description:
-            'APIs, sync com legado, Docker, VPN e orquestração de processos.',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Cloud, VPS e hospedagem',
-          description:
-            'AWS, VPS, Docker, TLS e operação de ambientes de homologação e produção.',
+            'Site da marca no domínio próprio, com SEO e caminho claro até o WhatsApp.',
         },
       },
     ],

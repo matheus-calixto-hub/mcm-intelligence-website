@@ -12,12 +12,11 @@ export default function AboutIntro() {
       <div className="container">
         <div className="page-intro-inner reveal">
           <span className="eyebrow">Sobre</span>
-          <h1 className="display">Quem entrega por trás da MCM.</h1>
+          <h1 className="display">Quem está por trás da MCM.</h1>
           <p>
-            CTO hands-on com mais de 9 anos em Odoo, Integrações críticas e
-            agentes de IA. Esta página é o track record — para quem quer
-            validar experiência antes de fechar projeto ou contratar
-            arquitetura especializada.
+            Mais de 9 anos colocando operação para rodar de verdade — atendimento,
+            vendas e sistemas. Esta página é o histórico: para quem quer
+            confiar antes de fechar.
           </p>
           <div className="page-intro-actions">
             <a
@@ -26,10 +25,10 @@ export default function AboutIntro() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Conversar no WhatsApp
+              Falar no WhatsApp
             </a>
-            <Link href="/#solucoes" className="btn btn-ghost">
-              Ver soluções da MCM
+            <Link href="/produtos" className="btn btn-ghost">
+              Ver produtos
             </Link>
           </div>
         </div>

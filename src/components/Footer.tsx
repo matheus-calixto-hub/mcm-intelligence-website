@@ -14,17 +14,18 @@ export default function Footer() {
               <span>.</span>
             </div>
             <p>
-              Consultoria em TI com foco em agentes de IA, sites com conversão,
-              Integrações e Odoo. Entrega hands-on para operações que precisam
-              de resultado.
+              Atendimento e follow-up no WhatsApp, agendamento pelo zap e sites
+              feitos para converter. Conversamos no WhatsApp e colocamos para
+              rodar.
             </p>
           </div>
 
           <div>
             <h4>Navegação</h4>
             <ul>
-              <li><Link href="/#solucoes">Soluções</Link></li>
-              <li><Link href="/#agentes">Agentes IA</Link></li>
+              <li><Link href="/produtos">Produtos</Link></li>
+              <li><Link href="/product/followup">Follow-up</Link></li>
+              <li><Link href="/product/whatsappbooking">Agendamento</Link></li>
               <li><Link href="/sobre">Sobre</Link></li>
               <li><Link href="/#contato">Contato</Link></li>
             </ul>
@@ -40,6 +41,15 @@ export default function Footer() {
                   rel="noopener noreferrer"
                 >
                   {COMPANY.whatsappFormatted}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={getWhatsAppUrl(WHATSAPP_MESSAGES.demo)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Pedir demonstração
                 </a>
               </li>
             </ul>

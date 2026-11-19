@@ -6,15 +6,15 @@ import { useEffect, useState } from 'react';
 import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
 
 const HOME_LINKS = [
+  { href: '/produtos', label: 'Produtos' },
   { href: '/#solucoes', label: 'Soluções' },
-  { href: '/#agentes', label: 'Agentes IA' },
   { href: '/#contato', label: 'Contato' },
   { href: '/sobre', label: 'Sobre' },
 ];
 
 const SOBRE_LINKS = [
   { href: '/', label: 'Início' },
-  { href: '/sobre#stack', label: 'Stack' },
+  { href: '/produtos', label: 'Produtos' },
   { href: '/sobre#experiencia', label: 'Experiência' },
   { href: '/#contato', label: 'Contato' },
 ];
@@ -77,7 +77,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Conversar no WhatsApp
+              Falar no WhatsApp
             </a>
           </div>
 
@@ -135,7 +135,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               onClick={closeMenu}
             >
-              Conversar no WhatsApp
+              Falar no WhatsApp
             </a>
           </div>
         </>

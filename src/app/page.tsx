@@ -1,7 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import ProductsHome from "@/components/ProductsHome";
 import Solutions from "@/components/Solutions";
-import Agents from "@/components/Agents";
+import TrustStrip from "@/components/TrustStrip";
 import CtaBand from "@/components/CtaBand";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -13,8 +14,9 @@ export default function Home() {
       <Navbar />
       <main id="conteudo">
         <Hero />
+        <ProductsHome />
+        <TrustStrip />
         <Solutions />
-        <Agents />
         <CtaBand />
         <Contact />
       </main>
