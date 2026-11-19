@@ -3,13 +3,26 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
+import {
+  COMPANY,
+  getWhatsAppMessageForPath,
+  getWhatsAppUrl,
+} from '@/config/constants';
 
 const HOME_LINKS = [
   { href: '/produtos', label: 'Produtos' },
-  { href: '/#solucoes', label: 'Soluções' },
+  { href: '/product/followup', label: 'Follow-up' },
+  { href: '/product/whatsappbooking', label: 'Agendamento' },
   { href: '/#contato', label: 'Contato' },
   { href: '/sobre', label: 'Sobre' },
+];
+
+const PRODUTOS_LINKS = [
+  { href: '/', label: 'Início' },
+  { href: '/product/followup', label: 'Follow-up' },
+  { href: '/product/sla-dashboard', label: 'Painel SLA' },
+  { href: '/product/whatsappbooking', label: 'Agendamento' },
+  { href: '/#contato', label: 'Contato' },
 ];
 
 const SOBRE_LINKS = [
@@ -32,7 +45,15 @@ export default function Navbar() {
   const pathname = usePathname();
   const isSobre = pathname?.startsWith('/sobre');
   const isProduct = pathname?.startsWith('/product');
-  const links = isProduct ? PRODUCT_LINKS : isSobre ? SOBRE_LINKS : HOME_LINKS;
+  const isProdutos = pathname?.startsWith('/produtos');
+  const links = isProduct
+    ? PRODUCT_LINKS
+    : isProdutos
+      ? PRODUTOS_LINKS
+      : isSobre
+        ? SOBRE_LINKS
+        : HOME_LINKS;
+  const waHref = getWhatsAppUrl(getWhatsAppMessageForPath(pathname));
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
@@ -85,7 +106,7 @@ export default function Navbar() {
 
           <div className="nav-actions">
             <a
-              href={getWhatsAppUrl(WHATSAPP_MESSAGES.demo)}
+              href={waHref}
               className="btn btn-primary"
               target="_blank"
               rel="noopener noreferrer"
@@ -142,7 +163,7 @@ export default function Navbar() {
               ))}
             </nav>
             <a
-              href={getWhatsAppUrl(WHATSAPP_MESSAGES.demo)}
+              href={waHref}
               className="btn btn-primary"
               target="_blank"
               rel="noopener noreferrer"

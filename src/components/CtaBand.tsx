@@ -12,11 +12,11 @@ export default function CtaBand() {
       <div className="container">
         <div className="cta-band-inner reveal">
           <div>
-            <h2>Chegou pelo LinkedIn ou pelo Google? Ótimo.</h2>
+            <h2>Quer ver se encaixa no seu negócio?</h2>
             <p>
-              Manda um oi. Em poucos minutos você entende se o Follow-up, o
-              Agendamento ou o site resolve o que está travando — e a gente
-              já marca a demonstração.
+              Manda um oi no WhatsApp. Em poucos minutos você vê se o Follow-up,
+              o Agendamento ou o site resolve o que está travando — e a gente
+              marca a demonstração.
             </p>
           </div>
           <div className="cta-band-actions">
@@ -26,7 +26,7 @@ export default function CtaBand() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Quero fechar · WhatsApp
+              Quero demonstração · WhatsApp
             </a>
             <Link href="/produtos" className="btn btn-ghost-on-dark">
               Ver produtos

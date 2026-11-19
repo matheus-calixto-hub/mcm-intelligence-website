@@ -32,7 +32,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Chamar no WhatsApp
+                Quero demonstração · WhatsApp
               </a>
               <Link href="/produtos" className="btn btn-ghost">
                 Ver produtos

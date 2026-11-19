@@ -1,11 +1,15 @@
 'use client';
 
-import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
+import { usePathname } from 'next/navigation';
+import { getWhatsAppMessageForPath, getWhatsAppUrl } from '@/config/constants';
 
 export default function WhatsAppFloat() {
+  const pathname = usePathname();
+  const href = getWhatsAppUrl(getWhatsAppMessageForPath(pathname));
+
   return (
     <a
-      href={getWhatsAppUrl(WHATSAPP_MESSAGES.demo)}
+      href={href}
       className="wa-float"
       target="_blank"
       rel="noopener noreferrer"

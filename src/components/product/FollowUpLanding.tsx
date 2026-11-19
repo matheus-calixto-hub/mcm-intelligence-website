@@ -85,7 +85,7 @@ export default function FollowUpLanding() {
           <section className="wb-hero" id="produto" aria-label="Follow-up comercial">
             <div className="wb-hero-plane" aria-hidden="true" />
             <div className="container wb-hero-grid">
-              <div className="wb-hero-copy wb-reveal wb-from-left">
+              <div className="wb-hero-copy wb-hero-enter">
                 <p className="wb-kicker">MCM Follow-up</p>
                 <h1>Lead não esfria. Time responde no prazo.</h1>
                 <p className="wb-lead">
@@ -107,7 +107,7 @@ export default function FollowUpLanding() {
                 </p>
               </div>
 
-              <div className="wb-phone-stage wb-reveal wb-from-right wb-reveal-d1">
+              <div className="wb-phone-stage wb-hero-enter wb-hero-enter-d1">
                 <div className="fu-hero-shot product-shot-fixed">
                   <Image
                     src="/products/followup-desktop-chat.jpg"

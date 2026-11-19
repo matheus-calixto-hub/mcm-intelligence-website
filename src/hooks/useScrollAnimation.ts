@@ -13,6 +13,11 @@ function isSlowNetwork(): boolean {
   return t === 'slow-2g' || t === '2g' || t === '3g';
 }
 
+function inViewport(el: Element): boolean {
+  const rect = el.getBoundingClientRect();
+  return rect.top < window.innerHeight * 0.94 && rect.bottom > 0;
+}
+
 export function useScrollAnimation<T extends HTMLElement>() {
   const ref = useRef<T>(null);
 
@@ -49,19 +54,25 @@ export function useScrollAnimation<T extends HTMLElement>() {
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
+      { threshold: 0.08, rootMargin: '0px 0px -4% 0px' },
     );
 
-    elements.forEach((el) => {
-      el.classList.add('reveal');
-      observer.observe(el);
+    requestAnimationFrame(() => {
+      elements.forEach((el) => {
+        el.classList.add('reveal');
+        if (inViewport(el)) {
+          el.classList.add('is-visible');
+        } else {
+          observer.observe(el);
+        }
+      });
     });
 
     const failsafe = window.setTimeout(() => {
       elements.forEach((el) => {
         if (!el.classList.contains('is-visible')) el.classList.add('is-visible');
       });
-    }, 3500);
+    }, 2800);
 
     return () => {
       window.clearTimeout(failsafe);

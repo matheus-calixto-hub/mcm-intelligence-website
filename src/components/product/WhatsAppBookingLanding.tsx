@@ -30,6 +30,7 @@ const NAV = [
 export default function WhatsAppBookingLanding() {
   const pageRef = useWbReveal();
   const wa = getWhatsAppUrl(WHATSAPP_MESSAGES.whatsappBooking);
+  const waQuote = getWhatsAppUrl(WHATSAPP_MESSAGES.customQuote);
 
   return (
     <div className="product-page" ref={pageRef}>
@@ -47,7 +48,7 @@ export default function WhatsAppBookingLanding() {
         <section className="wb-hero" id="produto" aria-label="WhatsApp Booking">
           <div className="wb-hero-plane" aria-hidden="true" />
           <div className="container wb-hero-grid">
-            <div className="wb-hero-copy wb-reveal wb-from-left">
+            <div className="wb-hero-copy wb-hero-enter">
               <p className="wb-kicker">MCM Booking</p>
               <h1>Cliente marca sozinho. Você continua atendendo.</h1>
               <p className="wb-lead">
@@ -69,7 +70,7 @@ export default function WhatsAppBookingLanding() {
               </p>
             </div>
 
-            <div className="wb-phone-stage wb-reveal wb-from-right wb-reveal-d1">
+            <div className="wb-phone-stage wb-hero-enter wb-hero-enter-d1">
               <BookingFlowPhone />
             </div>
           </div>
@@ -218,7 +219,16 @@ export default function WhatsAppBookingLanding() {
                 diferencial que a maioria dos sistemas deixa só no painel web.
               </p>
               <a href={wa} className="btn btn-primary wb-btn-lift" target="_blank" rel="noopener noreferrer">
-                Falar no WhatsApp
+                Quero demonstração
+              </a>
+              <a
+                href={waQuote}
+                className="btn btn-secondary wb-btn-lift"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ marginTop: '0.75rem' }}
+              >
+                Pedir orçamento
               </a>
             </aside>
           </div>

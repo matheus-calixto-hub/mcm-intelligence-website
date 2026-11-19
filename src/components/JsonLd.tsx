@@ -16,6 +16,8 @@ export default function JsonLd() {
     description: SITE.description,
     email: COMPANY.email,
     telephone: COMPANY.whatsapp,
+    taxID: COMPANY.cnpj,
+    vatID: COMPANY.cnpj,
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'São Paulo',

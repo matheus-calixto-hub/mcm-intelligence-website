@@ -8,6 +8,7 @@ export const COMPANY = {
   shortName: 'MCM',
   brand: 'MCM',
   tagline: 'Consultoria em TI',
+  cnpj: '32.434.264/0001-40',
   whatsapp: '+5511976218826',
   whatsappFormatted: '+55 11 97621-8826',
   email: 'matheus.calixto.ti@gmail.com',
@@ -43,4 +44,15 @@ export const WHATSAPP_MESSAGES = {
  */
 export function getWhatsAppUrl(message: string): string {
   return `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+}
+
+/** Mensagem WA conforme a página (navbar / float / footer). */
+export function getWhatsAppMessageForPath(pathname?: string | null): string {
+  const path = pathname || '';
+  if (path.startsWith('/product/followup')) return WHATSAPP_MESSAGES.followup;
+  if (path.startsWith('/product/sla-dashboard')) return WHATSAPP_MESSAGES.slaDashboard;
+  if (path.startsWith('/product/whatsappbooking')) return WHATSAPP_MESSAGES.whatsappBooking;
+  if (path.startsWith('/produtos')) return WHATSAPP_MESSAGES.products;
+  if (path.startsWith('/sobre')) return WHATSAPP_MESSAGES.consulting;
+  return WHATSAPP_MESSAGES.demo;
 }

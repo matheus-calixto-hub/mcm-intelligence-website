@@ -13,11 +13,15 @@ function isSlowNetwork(): boolean {
   return t === 'slow-2g' || t === '2g' || t === '3g';
 }
 
+function inViewport(el: Element): boolean {
+  const rect = el.getBoundingClientRect();
+  return rect.top < window.innerHeight * 0.94 && rect.bottom > 0;
+}
+
 /**
- * Reveal com animação visível no scroll.
- * - Rede ok: esconde via html.wb-motion e anima ao entrar na tela
- * - Rede lenta / reduced-motion: tudo visível, sem trancar
- * - Failsafe longo só para não deixar nada preso
+ * Reveal com animação no scroll.
+ * Above-the-fold entra na hora; below-fold anima ao aparecer.
+ * Rede lenta: tudo visível, sem trancar.
  */
 export function useWbReveal<T extends HTMLElement = HTMLDivElement>() {
   const ref = useRef<T>(null);
@@ -53,18 +57,25 @@ export function useWbReveal<T extends HTMLElement = HTMLDivElement>() {
           }
         });
       },
-      // Dispara perto da viewport para a animação ser vista
-      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
+      { threshold: 0.08, rootMargin: '0px 0px -4% 0px' },
     );
 
-    nodes.forEach((n) => io.observe(n));
+    // Já na tela: revela no próximo frame (anima sem FOUC longo)
+    requestAnimationFrame(() => {
+      nodes.forEach((n) => {
+        if (inViewport(n)) {
+          n.classList.add('is-in');
+        } else {
+          io.observe(n);
+        }
+      });
+    });
 
-    // Só destrava o que ainda não entrou (evita “sumir” no 4G)
     const failsafe = window.setTimeout(() => {
       nodes.forEach((n) => {
         if (!n.classList.contains('is-in')) n.classList.add('is-in');
       });
-    }, 3500);
+    }, 2800);
 
     return () => {
       window.clearTimeout(failsafe);

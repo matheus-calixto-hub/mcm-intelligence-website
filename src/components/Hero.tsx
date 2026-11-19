@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
+import { COMPANY, getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/config/constants';
 
 export default function Hero() {
   return (
@@ -25,14 +25,14 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Quero fechar negócio · WhatsApp
+              Quero demonstração · WhatsApp
             </a>
             <Link href="/produtos" className="btn btn-ghost-on-dark">
-              Ver o que oferecemos
+              Ver produtos
             </Link>
           </div>
           <p className="hero-trust">
-            Demonstração rápida · resposta humana · São Paulo
+            Demonstração rápida · resposta humana · CNPJ {COMPANY.cnpj}
           </p>
         </div>
       </div>

@@ -253,6 +253,26 @@ html.wb-motion .reveal.is-visible {
     transform 0.65s var(--ease);
 }
 
+/* Entrada do hero (acima da dobra) — não depende do scroll */
+html.wb-motion .wb-hero-enter {
+  animation: wb-hero-in 0.7s var(--ease) both;
+}
+
+html.wb-motion .wb-hero-enter-d1 {
+  animation-delay: 0.1s;
+}
+
+@keyframes wb-hero-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* ==========================================================================
    Navbar
    ========================================================================== */
@@ -1376,14 +1396,47 @@ html.wb-motion .reveal.is-visible {
   color: #9fd9cb;
 }
 
+.footer-cta {
+  margin-top: 1.15rem;
+  display: inline-flex;
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 1.35rem;
   font-size: 0.82rem;
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-end;
   justify-content: space-between;
-  gap: 0.75rem;
+  gap: 1rem;
+}
+
+.footer-legal {
+  display: grid;
+  gap: 0.25rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.footer-legal p {
+  margin: 0;
+  max-width: none;
+  color: inherit;
+}
+
+.footer-legal-sep {
+  margin: 0 0.4rem;
+  opacity: 0.55;
+}
+
+.footer-bottom-wa {
+  font-weight: 650;
+  color: #9fd9cb !important;
+  white-space: nowrap;
+}
+
+.footer-bottom-wa:hover {
+  color: #fff !important;
 }
 
 /* ==========================================================================
@@ -1549,9 +1602,6 @@ body:has(.wb)::before {
 html.wb-motion .wb-reveal:not(.is-in) {
   opacity: 0;
   transform: translate3d(0, 36px, 0);
-  transition:
-    opacity 0.6s var(--ease),
-    transform 0.6s var(--ease);
 }
 
 html.wb-motion .wb-reveal.wb-from-left:not(.is-in) {
@@ -2919,6 +2969,8 @@ html.wb-motion-safe .reveal {
   .wb-float,
   .wb-blob,
   .wb-reveal,
+  .wb-hero-enter,
+  .reveal,
   .wb-cta-orb,
   .wb-cta-chip-float,
   .wb-cta-dot,

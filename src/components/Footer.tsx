@@ -18,23 +18,43 @@ export default function Footer() {
               feitos para converter. Conversamos no WhatsApp e colocamos para
               rodar.
             </p>
+            <a
+              href={getWhatsAppUrl(WHATSAPP_MESSAGES.demo)}
+              className="btn btn-primary footer-cta"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Quero uma demonstração
+            </a>
           </div>
 
           <div>
-            <h4>Navegação</h4>
+            <h4>Produtos</h4>
             <ul>
-              <li><Link href="/produtos">Produtos</Link></li>
-              <li><Link href="/product/followup">Follow-up</Link></li>
-              <li><Link href="/product/sla-dashboard">Painel SLA</Link></li>
-              <li><Link href="/product/whatsappbooking">Agendamento</Link></li>
-              <li><Link href="/sobre">Sobre</Link></li>
-              <li><Link href="/#contato">Contato</Link></li>
+              <li>
+                <Link href="/produtos">Todos os produtos</Link>
+              </li>
+              <li>
+                <Link href="/product/followup">Follow-up</Link>
+              </li>
+              <li>
+                <Link href="/product/sla-dashboard">Painel SLA</Link>
+              </li>
+              <li>
+                <Link href="/product/whatsappbooking">Agendamento</Link>
+              </li>
             </ul>
           </div>
 
           <div>
-            <h4>Contato</h4>
+            <h4>Empresa</h4>
             <ul>
+              <li>
+                <Link href="/sobre">Sobre</Link>
+              </li>
+              <li>
+                <Link href="/#contato">Contato</Link>
+              </li>
               <li>
                 <a
                   href={getWhatsAppUrl(WHATSAPP_MESSAGES.demo)}
@@ -45,21 +65,33 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href={getWhatsAppUrl(WHATSAPP_MESSAGES.demo)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Pedir demonstração
-                </a>
+                <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {currentYear} {COMPANY.legalName}</p>
-          <p>{COMPANY.location}</p>
+          <div className="footer-legal">
+            <p>
+              &copy; {currentYear} {COMPANY.legalName}
+            </p>
+            <p>
+              CNPJ {COMPANY.cnpj}
+              <span className="footer-legal-sep" aria-hidden="true">
+                ·
+              </span>
+              {COMPANY.location}
+            </p>
+          </div>
+          <a
+            href={getWhatsAppUrl(WHATSAPP_MESSAGES.demo)}
+            className="footer-bottom-wa"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Falar no WhatsApp
+          </a>
         </div>
       </div>
     </footer>
