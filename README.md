@@ -89,30 +89,34 @@ npm run build
 npm run start
 ```
 
+## Produtos no site
+
+| Rota | Produto |
+|---|---|
+| `/produtos` | Hub (Follow-up · Painel SLA · Agendamento) |
+| `/product/followup` | Follow-up comercial WA + e-mail |
+| `/product/sla-dashboard` | Painel Visão geral (SLA / gráficos / Follow-up) |
+| `/product/whatsappbooking` | Agendamento no WhatsApp |
+
+Conteúdo editorial: `src/config/content.ts` · CTAs WhatsApp: `src/config/constants.ts`  
+Progresso: [`docs/PROGRESSO-PRODUTOS.md`](docs/PROGRESSO-PRODUTOS.md)  
+Imagens: `public/products/` (`followup-inbox.jpg`, `sla-dashboard.jpg`, `booking-agenda.jpg`)
+
 ## 📁 Estrutura do Projeto
 
 ```
 website/
 ├── src/
-│   ├── app/              # App Router do Next.js
-│   │   ├── layout.tsx    # Layout principal
-│   │   ├── page.tsx      # Página inicial
-│   │   └── globals.css   # Estilos globais
-│   ├── components/       # Componentes React
-│   │   ├── Header.tsx
-│   │   └── Footer.tsx
-│   └── lib/              # Utilitários e helpers
-│       └── odoo.ts       # Cliente para integração Odoo
-├── public/               # Arquivos estáticos
-├── Dockerfile            # Dockerfile para produção
-├── Dockerfile.dev        # Dockerfile para desenvolvimento
-├── docker-compose.yml    # Docker Compose para desenvolvimento
-├── docker-compose.prod.yml # Docker Compose para produção
-├── .dockerignore         # Arquivos ignorados no Docker
-├── package.json
-├── tsconfig.json
-└── next.config.mjs
+│   ├── app/                 # App Router (/, /produtos, /product/*, /sobre)
+│   ├── components/          # Home + landings de produto
+│   │   └── product/         # FollowUp, SlaDashboard, WhatsAppBooking
+│   ├── config/              # content, constants, site
+│   └── lib/                 # odoo.ts (integração futura)
+├── public/products/         # Prints / mocks comerciais
+├── docs/PROGRESSO-PRODUTOS.md
+└── …
 ```
+
 
 ## 🔗 Integração com Odoo
 

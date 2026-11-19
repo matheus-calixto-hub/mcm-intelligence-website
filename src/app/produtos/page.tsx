@@ -9,9 +9,9 @@ import { PRODUCTS } from '@/config/content';
 import { getSiteUrl, SITE } from '@/config/site';
 
 const path = '/produtos';
-const title = 'Produtos — Follow-up e Agendamento no WhatsApp';
+const title = 'Produtos — Follow-up, Painel SLA e Agendamento no WhatsApp';
 const description =
-  'Escolha o caminho: follow-up comercial com fila e prazos, ou agendamento pelo WhatsApp. Demonstração e orçamento no zap com a MCM.';
+  'Follow-up comercial, painel de SLA com gráficos e agendamento pelo WhatsApp. Demonstração e orçamento no zap com a MCM.';
 
 export const metadata: Metadata = {
   title,
@@ -36,8 +36,8 @@ export default function ProdutosPage() {
             <p className="eyebrow">Produtos MCM</p>
             <h1>Escolha o que resolve o seu dia a dia</h1>
             <p className="products-lead">
-              Dois caminhos claros. Sem jargão. Você vê como funciona no WhatsApp
-              e decide com calma — ou a gente ajuda a combinar os dois.
+              Follow-up, painel de indicadores e agenda no WhatsApp — caminhos
+              claros, sem jargão. Você vê como funciona e decide com calma.
             </p>
             <div className="products-hero-cta">
               <a
@@ -60,8 +60,8 @@ export default function ProdutosPage() {
             <div className="section-head">
               <h2 id="escolha-title">O que você precisa agora?</h2>
               <p>
-                Se o desafio é lead esfriando e time desorganizado, vá de
-                Follow-up. Se é agenda e remarcação, vá de Agendamento.
+                Lead esfriando → Follow-up. Sócio cobrando ritmo → Painel SLA.
+                Agenda e remarcação → Agendamento no WhatsApp.
               </p>
             </div>
 

@@ -17,8 +17,8 @@ export default function ProductsHome() {
           <span className="eyebrow">Produtos prontos para vender</span>
           <h2>Escolha o caminho. A gente mostra ao vivo.</h2>
           <p>
-            Dois produtos claros, pensados para o dia a dia do comercial e da
-            agenda — sem você virar especialista em sistema.
+            Follow-up, painel de SLA e agenda no WhatsApp — pensados para o dia
+            a dia do comercial, sem você virar especialista em sistema.
           </p>
         </div>
 

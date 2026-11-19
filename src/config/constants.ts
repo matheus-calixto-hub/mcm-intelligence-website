@@ -32,6 +32,8 @@ export const WHATSAPP_MESSAGES = {
     'Olá! Quero conhecer o agendamento pelo WhatsApp (cliente marca e remarca sozinho). Podem me mostrar uma demonstração?',
   followup:
     'Olá! Quero conhecer o Follow-up comercial no WhatsApp e e-mail (fila, prazos e cadências). Quero uma demonstração e entender como começar.',
+  slaDashboard:
+    'Olá! Quero conhecer o painel Visão geral (SLA, tempo de resposta, fila e Follow-ups). Quero uma demonstração com os gráficos e entender como funciona para vendedor e sócio.',
   products:
     'Olá! Vi os produtos no site da MCM e quero ajuda para escolher o que faz sentido para o meu negócio.',
 } as const;

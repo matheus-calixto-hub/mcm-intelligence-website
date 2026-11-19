@@ -17,6 +17,18 @@ export const SOLUTIONS = [
     href: '/product/followup',
   },
   {
+    id: 'sla',
+    title: 'Painel de SLA que o sócio entende',
+    lead: 'Tempo de resposta, fila e Follow-ups em gráficos — prontos para a reunião de vendas.',
+    points: [
+      '% no prazo e 1ª resposta',
+      'Vendedor vê o próprio ritmo',
+      'Sócio filtra por responsável',
+      'Follow-ups agendados e disparados',
+    ],
+    href: '/product/sla-dashboard',
+  },
+  {
     id: 'booking',
     title: 'Agenda no WhatsApp, sem te interromper',
     lead: 'Enquanto você atende, o cliente marca e remarca sozinho no zap.',
@@ -40,18 +52,6 @@ export const SOLUTIONS = [
     ],
     href: '/#contato',
   },
-  {
-    id: 'operacao',
-    title: 'Quando precisar ir além do atendimento',
-    lead: 'Organizamos vendas, rotinas e o que trava o crescimento — no seu ritmo.',
-    points: [
-      'Começa pelo que dói hoje',
-      'Liga o que você já usa',
-      'Tira trabalho repetitivo do time',
-      'Acompanhamento de perto',
-    ],
-    href: '/#contato',
-  },
 ] as const;
 
 /** Hub /produtos — escolha guiada. */
@@ -71,6 +71,22 @@ export const PRODUCTS = [
     image: '/products/followup-inbox.jpg',
     href: '/product/followup',
     cta: 'Conhecer o Follow-up',
+  },
+  {
+    id: 'sla',
+    name: 'Painel SLA & Follow-up',
+    eyebrow: 'Indicadores e gestão',
+    blurb:
+      'Visão geral com gráficos: tempo de resposta, % no SLA, fila, disparos e falhas — o que o mercado cobra ver.',
+    points: [
+      '1ª resposta WA e e-mail',
+      'Vendedor vs sócio (filtro por responsável)',
+      'Follow-ups agendados e enviados',
+      'Pronto para apresentar em reunião',
+    ],
+    image: '/products/sla-dashboard.jpg',
+    href: '/product/sla-dashboard',
+    cta: 'Ver o painel',
   },
   {
     id: 'booking',

@@ -224,6 +224,42 @@ export default function FollowUpLanding() {
           </div>
         </section>
 
+        <section className="section" aria-labelledby="fu-sla-title">
+          <div className="container wb-setup-grid">
+            <div className="wb-reveal wb-from-left">
+              <div className="section-head">
+                <h2 id="fu-sla-title">Painel Visão geral incluso</h2>
+                <p>
+                  Tempo de 1ª resposta, % no SLA, fila, Follow-ups disparados e
+                  gráficos — o que o sócio e o mercado cobram ver.
+                </p>
+              </div>
+              <ul className="wb-setup-list">
+                <li className="wb-glass">
+                  <strong>Vendedor</strong> — acompanha o próprio ritmo.
+                </li>
+                <li className="wb-glass">
+                  <strong>Sócio</strong> — equipe toda + filtro por responsável.
+                </li>
+              </ul>
+              <Link href="/product/sla-dashboard" className="btn btn-secondary" style={{ marginTop: '1rem' }}>
+                Conhecer o painel SLA
+              </Link>
+            </div>
+            <aside className="wb-reveal wb-from-right wb-reveal-d1">
+              <div className="fu-hero-shot wb-glass-deep">
+                <Image
+                  src="/products/sla-dashboard.jpg"
+                  alt="Painel Visão geral SLA e Follow-up"
+                  width={1280}
+                  height={720}
+                  className="fu-hero-img"
+                />
+              </div>
+            </aside>
+          </div>
+        </section>
+
         <section className="section" id="para-quem" aria-labelledby="fu-who-title">
           <div className="container wb-setup-grid">
             <div className="wb-reveal wb-from-left">
