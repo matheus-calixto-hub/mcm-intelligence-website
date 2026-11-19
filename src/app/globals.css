@@ -3610,9 +3610,6 @@ html.wb-motion-safe .reveal {
   min-height: 0;
   position: relative;
   overflow: hidden;
-}
-
-.bk-phone-screen-real {
   aspect-ratio: 9 / 19.5;
 }
 
