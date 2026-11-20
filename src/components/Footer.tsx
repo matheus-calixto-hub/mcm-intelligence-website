@@ -43,6 +43,9 @@ export default function Footer() {
               <li>
                 <Link href="/product/whatsappbooking">Agendamento</Link>
               </li>
+              <li>
+                <Link href="/product/loja">Loja WhatsApp</Link>
+              </li>
             </ul>
           </div>
 

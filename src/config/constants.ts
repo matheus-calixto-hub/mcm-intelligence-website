@@ -34,6 +34,8 @@ export const WHATSAPP_MESSAGES = {
     'Olá! Quero conhecer o Follow-up comercial no WhatsApp e e-mail (fila, prazos e cadências). Quero uma demonstração e entender como começar.',
   slaDashboard:
     'Olá! Quero conhecer o painel Visão geral (SLA, tempo de resposta, fila e Follow-ups). Quero uma demonstração com os gráficos e entender como funciona para vendedor e sócio.',
+  loja:
+    'Olá! Quero conhecer a Loja no WhatsApp (catálogo, pedido e bot com pause no Chatbox). Quero uma demonstração.',
   products:
     'Olá! Vi os produtos no site da MCM e quero ajuda para escolher o que faz sentido para o meu negócio.',
 } as const;
@@ -51,6 +53,7 @@ export function getWhatsAppMessageForPath(pathname?: string | null): string {
   if (path.startsWith('/product/followup')) return WHATSAPP_MESSAGES.followup;
   if (path.startsWith('/product/sla-dashboard')) return WHATSAPP_MESSAGES.slaDashboard;
   if (path.startsWith('/product/whatsappbooking')) return WHATSAPP_MESSAGES.whatsappBooking;
+  if (path.startsWith('/product/loja')) return WHATSAPP_MESSAGES.loja;
   if (path.startsWith('/produtos')) return WHATSAPP_MESSAGES.products;
   if (path.startsWith('/sobre')) return WHATSAPP_MESSAGES.consulting;
   return WHATSAPP_MESSAGES.demo;

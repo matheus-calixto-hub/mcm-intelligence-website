@@ -38,6 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${base}/product/loja`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${base}/sobre`,
       lastModified,
       changeFrequency: 'monthly',

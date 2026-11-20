@@ -3,8 +3,9 @@
 import Image from 'next/image';
 import BookingFlowPhone from '@/components/product/BookingFlowPhone';
 import MensagensWaConversasMock from '@/components/product/MensagensWaConversasMock';
+import StoreFlowPhone from '@/components/product/StoreFlowPhone';
 
-type Visual = 'image' | 'conversas' | 'booking-flow';
+type Visual = 'image' | 'conversas' | 'booking-flow' | 'store-flow';
 
 type Props = {
   visual: Visual;
@@ -35,6 +36,13 @@ export default function ProductVisual({
     return (
       <div className={`product-card-media-live ${className}`.trim()}>
         <BookingFlowPhone compact={compact} />
+      </div>
+    );
+  }
+  if (visual === 'store-flow') {
+    return (
+      <div className={`product-card-media-live ${className}`.trim()}>
+        <StoreFlowPhone compact={compact} />
       </div>
     );
   }

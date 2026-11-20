@@ -78,6 +78,16 @@ export default function JsonLd() {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
+          name: 'Loja no WhatsApp',
+          url: `${url}/product/loja`,
+          description:
+            'Catálogo no Odoo, pedido no WhatsApp e bot que o time pausa no Chatbox.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
           name: 'Sites que convertem',
           description:
             'Site da marca no domínio próprio, com SEO e caminho claro até o WhatsApp.',

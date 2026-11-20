@@ -41,6 +41,18 @@ export const SOLUTIONS = [
     href: '/product/whatsappbooking',
   },
   {
+    id: 'loja',
+    title: 'Loja no WhatsApp com catálogo no Odoo',
+    lead: 'Cliente monta o pedido no zap; seu time publica o que aparece e pausa o bot no Chatbox.',
+    points: [
+      'Catálogo no painel',
+      'Pedido vira sale.order',
+      'Bot on/off no chat',
+      'Lista interativa ou texto',
+    ],
+    href: '/product/loja',
+  },
+  {
     id: 'sites',
     title: 'Site bonito que manda gente pro zap',
     lead: 'Sua marca no Google e no LinkedIn — com caminho óbvio até a conversa.',
@@ -106,6 +118,23 @@ export const PRODUCTS = [
     visual: 'booking-flow',
     href: '/product/whatsappbooking',
     cta: 'Conhecer o Agendamento',
+  },
+  {
+    id: 'loja',
+    name: 'Loja no WhatsApp',
+    eyebrow: 'Vendas e catálogo',
+    blurb:
+      'Para quem vende produto ou serviço no zap: catálogo no Odoo, pedido no chat e bot que o time controla.',
+    points: [
+      'Publica o que o cliente vê',
+      'Pedido no ERP',
+      'Pause automático no texto livre',
+      'Demo loja.consultoria-mcm.com.br',
+    ],
+    image: '/products/followup-desktop-chat.jpg',
+    visual: 'store-flow',
+    href: '/product/loja',
+    cta: 'Conhecer a Loja',
   },
 ] as const;
 

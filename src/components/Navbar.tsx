@@ -13,6 +13,7 @@ const HOME_LINKS = [
   { href: '/produtos', label: 'Produtos' },
   { href: '/product/followup', label: 'Follow-up' },
   { href: '/product/whatsappbooking', label: 'Agendamento' },
+  { href: '/product/loja', label: 'Loja' },
   { href: '/#contato', label: 'Contato' },
   { href: '/sobre', label: 'Sobre' },
 ];
@@ -22,6 +23,7 @@ const PRODUTOS_LINKS = [
   { href: '/product/followup', label: 'Follow-up' },
   { href: '/product/sla-dashboard', label: 'Painel SLA' },
   { href: '/product/whatsappbooking', label: 'Agendamento' },
+  { href: '/product/loja', label: 'Loja' },
   { href: '/#contato', label: 'Contato' },
 ];
 
@@ -38,6 +40,7 @@ const PRODUCT_LINKS = [
   { href: '/product/followup', label: 'Follow-up' },
   { href: '/product/sla-dashboard', label: 'Painel SLA' },
   { href: '/product/whatsappbooking', label: 'Agendamento' },
+  { href: '/product/loja', label: 'Loja' },
   { href: '/#contato', label: 'Contato' },
 ];
 
