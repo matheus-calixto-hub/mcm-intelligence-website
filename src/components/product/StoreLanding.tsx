@@ -54,8 +54,11 @@ export default function StoreLanding() {
                   </a>
                 </div>
                 <p className="wb-hero-note">
-                  Demo em loja.consultoria-mcm.com.br — mesmo stack Meta + Odoo
-                  dos outros produtos MCM.
+                  Instância dedicada em{' '}
+                  <a href="https://loja.consultoria-mcm.com.br/web/login" style={{ color: 'inherit' }}>
+                    loja.consultoria-mcm.com.br
+                  </a>
+                  {' '}— Mensagens WA + catálogo/pedidos, separada do SAC.
                 </p>
               </div>
 
